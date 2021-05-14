@@ -1,0 +1,32 @@
+<BFTypedBinder binderType="Akikiki_Juvenile_F">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Akikiki>
+									<Akikiki_Juvenile>
+										<Akikiki_Juvenile_F />
+									</Akikiki_Juvenile>
+								</Akikiki>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<UIToggleButton template="adopt">
+			<on>
+				<event data="BFString" msg="ZT_SETPLACEMENTOBJECT" string="Akikiki_Juvenile_F" />
+			</on>
+		</UIToggleButton>
+		<BFAIEntityDataShared b_Male="0" />
+	</shared>
+</BFTypedBinder>

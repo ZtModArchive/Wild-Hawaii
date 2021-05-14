@@ -1,0 +1,7 @@
+<soundtags>
+   <BFSoundtag>
+      <BF3DSndFactory name="Iiwi_Call">
+         <snd name="entities/units/animals/Iiwi/sound/Iiwi_Call.wav" volume="1" mindist="4" maxdist="30"/>
+      </BF3DSndFactory>
+   </BFSoundtag>
+</soundtags>

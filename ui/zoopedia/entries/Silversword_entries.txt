@@ -1,0 +1,7 @@
+<entries>
+   <BFHelpEntry entry="zoopedia_home">
+      <BFHelpEntry entry="zoopedia_foliage">
+<BFHelpEntry entry="zoopedia_Silversword" order="zoopedia_Silversword"/>
+      </BFHelpEntry>
+   </BFHelpEntry>
+</entries>

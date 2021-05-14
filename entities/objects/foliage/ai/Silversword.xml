@@ -1,0 +1,57 @@
+﻿<BFTypedBinder binderType="Silversword">
+	<types>
+		<entity>
+			<foliage>
+				<plant>
+					<bush>
+						<Silversword />
+					</bush>
+				</plant>
+			</foliage>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity entityVersion="1" />
+	</instance>
+	<shared>
+		<ZTPlacementData autoFootprint="false" icon3Doffset="0 -0.07 0.25" icon3Dscale="0.45">
+			<cfootprint width="1" height="1" />
+			<dfootprint width="1" height="1" />
+		</ZTPlacementData>
+		<UIToggleButton template="adopt">
+			<UIAspect>
+				<default image="entities\objects\foliage\Silversword\Silversword_icon.dds" />
+			</UIAspect>
+			<UIHelpInfo name="" short="" long="" help="" ids="entityname:Silversword" />
+			<on>
+				<event msg="ZT_SETPLACEMENTOBJECT" data="BFString" string="Silversword" />
+			</on>
+		</UIToggleButton>
+		<BFGBiomeData location="coastal_hawaii">
+			<montane />
+		</BFGBiomeData>
+		<BFAIEntityDataShared s_uisort="zzz" s_Endangerment="Critical" s_Zoopedia="zoopedia:zoopedia_Silversword:entry" f_FameReq="20" />
+		<ZTTourData>
+			<biome_scrub value="2" />
+		</ZTTourData>
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					<BFSceneGraphComponent isBFR="true" modelfile="entities\objects\foliage\Silversword\Silversword" scale="1.0" switch="0 15 25 35 60" />
+					<BFGroundFitComponent heightOffset="0.0"/>
+					<BFTerrainPaintComponent />
+				</BFPhysObj>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder>
+			<instance>
+				<ZTEconomyComponent cost="10">
+					<ZTTransaction name="build" costType="parent" type="debit" category="construction" />
+					<ZTTransaction name="destroy" cost="80" costType="%parent" type="credit" category="recycling" />
+				</ZTEconomyComponent>
+			</instance>
+		</BFBinder>
+	</binder>
+</BFTypedBinder>

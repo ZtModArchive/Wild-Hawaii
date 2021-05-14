@@ -1,0 +1,2439 @@
+<BFAITaskTemplateList>
+	<BFAITaskTemplate Name="MatingDisplay" UniqueID="Alala:MatingDisplay">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_M />
+			</Subjects>
+			<Targets>
+				<Alala_Adult_F />
+				<Qualifiers b_Pregnant="E false" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="20">
+			<BFAIAttributeFloatMap reproduction="-40" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:MatingCallAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehFaceTarget />
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken GiveTo="Alala_Adult_F" Name="t_WatchMatingDisplay" Payload="subject" Radius="30" Reconsider="true" Timeout="-1" />
+				</BFAITokenList>
+			</BFBehSendToken>
+			<BFBehAnimate playTime="10" targetAnim="Stand_Call" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-10" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="WatchMatingDisplay" UniqueID="Alala:WatchMatingDisplay">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+				<Qualifiers b_Pregnant="E false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+			</Targets>
+			<Objects>
+				<t_WatchMatingDisplay />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="0.001" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:MatingCallAnswer" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPursuit hitRadius="3" locoSpeed="fast" pursuitRadius="15" />
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehFaceTarget />
+			<BFBehPlaySet behSet="Call" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Rating" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="MatePerhaps" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="RespondReproduction" UniqueID="Alala:RespondReproduction" reserveTag="General">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_M />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inHabitat="true" />
+			</Targets>
+			<Objects>
+				<t_Reproduce />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="1" />
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Pos_4" />
+			<BFBehFaceTarget />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToMate" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehSyncSet subjectBehSet="DockMateM" targetBehSet="WaitMateF" />
+			<ZTBehViewEvent viewKey="Pos_6">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:MateM" priority="1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehSyncSet subjectBehSet="MateM" targetBehSet="MateF" useTargetName="true" />
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken Chance="75" GiveTo="target" Name="t_Pregnant1" Timeout="-1" />
+				</BFAITokenList>
+			</BFBehSendToken>
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap reproduction="-50" rest="-10" />
+			<BFAITargetData rest="-10" />
+			<BFBehExecTask>
+				<BFBehScript context="behavior" file="scripts/setmates.lua" function="setmates" />
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalReproductionVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Pregnant" UniqueID="Alala:Pregnant">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects>
+				<t_Pregnant1 />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="50" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTMessageInfo global="true" locID="zoomessages:PregnantAnimal" priority="1" timeout="30" useEntityName="true" />
+					<ZTEmoticonInfo emoticonName="EmotePregnant" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAITargetData b_Pregnant="true" />
+			<BFBehExecTask>
+				<BFBehSendToken>
+					<BFAITokenList>
+						<BFAIToken GiveTo="subject" Name="t_Pregnant" OnlyOne="true" RetainOnFailure="true" Timein="11.26" Timeout="-1" />
+					</BFAITokenList>
+				</BFBehSendToken>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="LayEggBushes" UniqueID="Alala:LayEggBushes">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+			</Subjects>
+			<Targets>
+				<bush />
+				<Qualifiers_AND inHabitat="true" inSight="25" />
+			</Targets>
+			<Objects>
+				<t_Pregnant />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2010">
+			<BFAIBiomeMap alpine=".25" borealforest=".75" desert=".25" grassland=".50" savannah=".50" scrub=".25" temperateforest="1.00" tropicalrainforest=".25" tundra=".25" wetlands="0.35" />
+			<BFAIAttributeFloatMap reproduction="-100" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToLayEgg" />
+					<ZTMessageInfo global="true" locID="zoomessages:AnimalGoingToLayEgg" priority="1" timeout="30" useEntityName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehMove />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:LayingEgg" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="LayEgg" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap reproduction="-100" />
+			<BFAISubjectData b_Pregnant="false" />
+			<BFBehExecTask>
+				<ZTBehViewEvent viewKey="Pos_5">
+					<ZTFeedbackData>
+						<ZTThoughtInfo global="false" locID="guestthoughts:AnimalLayEggGood" priority="1" timeout="60" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehViewEvent>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalLayEgg" priority="1" timeout="30" useEntityName="true" />
+						<ZTEmoticonInfo emoticonName="EmoteAnimalReproductionVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="LayEggShade" UniqueID="Alala:LayEggShade">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+				<Qualifiers_AND isSwimming="false" onLand="true" />
+			</Subjects>
+			<Targets>
+				<shade />
+				<Qualifiers_AND inHabitat="true" inSight="25" onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Pregnant />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2005">
+			<BFAIAttributeFloatMap reproduction="-95" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToLayEgg" />
+					<ZTMessageInfo global="true" locID="zoomessages:AnimalGoingToLayEgg" priority="1" timeout="30" useEntityName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehMove />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:LayingEgg" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="LayEgg" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap reproduction="-100" />
+			<BFAISubjectData b_Pregnant="false" />
+			<BFBehExecTask>
+				<ZTBehViewEvent viewKey="Pos_5">
+					<ZTFeedbackData>
+						<ZTThoughtInfo global="false" locID="guestthoughts:AnimalLayEggGood" priority="1" timeout="60" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehViewEvent>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalLayEgg" priority="1" timeout="30" useEntityName="true" />
+						<ZTEmoticonInfo emoticonName="EmoteAnimalReproductionVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="LayEgg_Dirt" UniqueID="Alala:LayEgg_Dirt">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+				<Qualifiers_AND isSwimming="false" onLand="true" />
+			</Subjects>
+			<Targets>
+				<dirt />
+				<Qualifiers_AND inHabitat="true" inSight="25" />
+			</Targets>
+			<Objects>
+				<t_Pregnant />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000">
+			<BFAIAttributeFloatMap reproduction="-90" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToLayEgg" />
+					<ZTMessageInfo global="true" locID="zoomessages:AnimalGoingToLayEgg" priority="1" timeout="30" useEntityName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehMove />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:LayingEgg" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="LayEgg" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap reproduction="-100" />
+			<BFAISubjectData b_Pregnant="false" />
+			<BFBehExecTask>
+				<ZTBehViewEvent viewKey="Pos_5">
+					<ZTFeedbackData>
+						<ZTThoughtInfo global="false" locID="guestthoughts:AnimalLayEggGood" priority="1" timeout="60" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehViewEvent>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalLayEgg" priority="1" timeout="30" useEntityName="true" />
+						<ZTEmoticonInfo emoticonName="EmoteAnimalReproductionVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="LayEgg_GroundCover" UniqueID="Alala:LayEgg_GroundCover">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+				<Qualifiers_AND isSwimming="false" onLand="true" />
+			</Subjects>
+			<Targets>
+				<ground_cover />
+				<Qualifiers_AND inHabitat="true" inSight="25" />
+			</Targets>
+			<Objects>
+				<t_Pregnant />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000">
+			<BFAIAttributeFloatMap reproduction="-90" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToLayEgg" />
+					<ZTMessageInfo global="true" locID="zoomessages:AnimalGoingToLayEgg" priority="1" timeout="30" useEntityName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehMove />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:LayingEgg" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="LayEgg" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap reproduction="-100" />
+			<BFAISubjectData b_Pregnant="false" />
+			<BFBehExecTask>
+				<ZTBehViewEvent viewKey="Pos_5">
+					<ZTFeedbackData>
+						<ZTThoughtInfo global="false" locID="guestthoughts:AnimalLayEggGood" priority="1" timeout="60" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehViewEvent>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalLayEgg" priority="1" timeout="30" useEntityName="true" />
+						<ZTEmoticonInfo emoticonName="EmoteAnimalReproductionVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="EatKeeper" UniqueID="Alala:EatKeeper">
+		<BFAICreateData>
+			<Subjects />
+			<Targets>
+				<Terrain_Meat />
+				<Qualifiers_AND f_FoodLevel="GE 1" inHabitat="true" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData>
+			<BFAIAttributeFloatMap hunger="-20" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToEat" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehDockRadial dockRadius=".4" subjectNode="Node_Mouth" targetAnim="Stand_Idle" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap bathroom="30" hunger="-20" hygiene="5" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTActionInfo locID="animalactions:Eating" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+				<ZTBehViewEvent viewKey="Pos_2" />
+				<BFBehPlaySet behSet="EatTear" />
+				<BFBehPlaySet behSet="ExitFoodDish" />
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalHungerVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+			<BFAITargetData f_FoodLevel="-10" />
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="DefaultTask_Alala" UniqueID="Alala:DefaultTask_Alala">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers inWater="true" />
+			</Subjects>
+			<Targets>
+				<ground_cover />
+				<dirt />
+				<Qualifiers_AND inHabitat="true" inSight="25" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore=".002" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToLand" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehMove locoSpeed="medium" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap exercise="-30" />
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="Idle" />
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Wander" UniqueID="Alala:Wander">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData>
+			<BFAIAttributeFloatMap exercise="-5" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:WalkingAround" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="WanderHop" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap exercise="-10" rest="5" />
+			<BFBehExecTask>
+				<ZTBehViewEvent viewKey="Pos_1" />
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalExerciseGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Fly" TaskDelayMax="120" TaskDelayMin="60" UniqueID="Alala:Fly">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData>
+			<BFAIAttributeFloatMap exercise="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:FlyingAround" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalFlyGood" priority="1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehWander avoidEntityRadius="8" avoidWater="true" locoSpeed="fly" maxPlayTime="20" minPlayTime="10">
+				<avoidEntityTypes>
+					<b_XLargePredator />
+					<b_LargePredator />
+					<b_MediumPredator />
+					<b_SmallPredator />
+				</avoidEntityTypes>
+			</BFBehWander>
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap exercise="-10" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalExerciseVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Rest" UniqueID="Alala:Rest">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData>
+			<BFAIAttributeFloatMap rest="-40" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Pos_1" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Sleeping" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="Sit" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap rest="-100" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalRestVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Groom" UniqueID="Alala:Groom">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="5">
+			<BFAIAttributeFloatMap hygiene="-25" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GroomingSelf" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalGroomSelfGood" priority="1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Groom" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap hygiene="-10" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalHygieneVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Contact_Call" TaskDelayMax="120" TaskDelayMin="60" UniqueID="Alala:Contact_Call">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="10">
+			<BFAIAttributeFloatMap social="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<BFBehFaceTarget />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Call" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-10" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+			<BFAITokenList>
+				<BFAIToken GiveTo="target" Name="t_Call" Payload="subject" Timeout="30" />
+			</BFAITokenList>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Contact_Call_Stimulation" TaskDelayMax="120" TaskDelayMin="60" UniqueID="Alala:Contact_Call_Stimulation">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="10">
+			<BFAIAttributeFloatMap stimulation="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<BFBehFaceTarget />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Call" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap stimulation="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalStimulationVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+			<BFAITokenList>
+				<BFAIToken GiveTo="target" Name="t_Call" Payload="subject" Timeout="30" />
+			</BFAITokenList>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Contact_Answer" UniqueID="Alala:Contact_Answer">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Call />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="10">
+			<BFAIAttributeFloatMap social="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<BFBehFaceTarget />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAnswer" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Call" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-10" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Contact_Answer_Stimulation" UniqueID="Alala:Contact_Answer_Stimulation">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Call />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="10">
+			<BFAIAttributeFloatMap stimulation="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<BFBehFaceTarget />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAnswer" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Call" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap stimulation="-10" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalStimulationVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="GrowJuvenile" TaskDelayMax="60" TaskDelayMin="60" UniqueID="Alala:GrowJuvenile">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" lifespan="GE 3.13" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000" />
+		<BFBehExecTask>
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken Chance="50" GiveTo="subject" Name="t_Age1" Reconsider="true" Timeout="59" />
+				</BFAITokenList>
+			</BFBehSendToken>
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Age_F1" UniqueID="Alala:Age_F1">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young_F />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects>
+				<t_Age1 />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000" />
+		<BFBehExecTask>
+			<ZTBehMorph initScale="0.15" morphPeriod="10" morphScale="true" morphTargetEntityType="Alala_Juvenile_F" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Age_M1" UniqueID="Alala:Age_M1">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young_M />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects>
+				<t_Age1 />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000" />
+		<BFBehExecTask>
+			<ZTBehMorph initScale="0.15" morphPeriod="10" morphScale="true" morphTargetEntityType="Alala_Juvenile_M" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="GrowAdult" TaskDelayMax="60" TaskDelayMin="60" UniqueID="Alala:GrowAdult">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Juvenile />
+				<Qualifiers_AND inWater_OR_onLand="true" lifespan="GE 9.13" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000" />
+		<BFBehExecTask>
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken Chance="50" GiveTo="subject" Name="t_Age" Reconsider="true" Timeout="59" />
+				</BFAITokenList>
+			</BFBehSendToken>
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Age_F" UniqueID="Alala:Age_F">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Juvenile_F />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects>
+				<t_Age />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000" />
+		<BFBehExecTask>
+			<ZTBehMorph initScale="0.42" morphPeriod="10" morphScale="true" morphTargetEntityType="Alala_Adult_F" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Age_M" UniqueID="Alala:Age_M">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Juvenile_M />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects>
+				<t_Age />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000" />
+		<BFBehExecTask>
+			<ZTBehMorph initScale="0.42" morphPeriod="10" morphScale="true" morphTargetEntityType="Alala_Adult_M" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Old" TaskDelayMax="60" TaskDelayMin="60" UniqueID="Alala:Old">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers lifespan="GE 75.89" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData>
+			<BFAIAttributeFloatMap lifespan="-100" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Pos_1" />
+			<BFBehPlaySet behSet="Rest" />
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken Chance="25" GiveTo="subject" Name="t_Die" Reconsider="true" Timeout="59" />
+				</BFAITokenList>
+			</BFBehSendToken>
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Die" UniqueID="Alala:Die">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects>
+				<t_Die />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="10000" />
+		<BFBehExecTask>
+			<BFBehPlaySet behSet="Die_OldAge" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="PeckGround" UniqueID="Alala:PeckGround" reserveTag="PeckGround">
+		<BFAICreateData>
+			<Subjects />
+			<Targets>
+				<dirt />
+				<Qualifiers_AND inHabitat="true" inSight="25" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData>
+			<BFAIAttributeFloatMap hunger="-10" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<BFBehPlaySet behSet="PeckGround" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap bathroom="5" hunger="-10" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalHungerGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="DrinkWaterTerrain" UniqueID="Alala:DrinkWaterTerrain">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<shore />
+				<Qualifiers_AND inHabitat="true" inSight="25" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData>
+			<BFAIAttributeFloatMap thirst="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingDrink" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehDockWater subjectNode="Node_Mouth" targetAnim="Stand_Idle" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFBehExecTask>
+				<ZTBehViewEvent viewKey="Pos_1" />
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTActionInfo locID="animalactions:Drinking" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+				<BFBehAnimate targetAnim="Stand_Drink" />
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalThirstGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+			<BFAIAttributeFloatMap bathroom="15" thirst="-40" />
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Mating_Call" UniqueID="Alala:Mating_Call">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_M />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<Alala_Adult_F />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="15">
+			<BFAIAttributeFloatMap reproduction="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<BFBehFaceTarget />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Call" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap reproduction="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalReproductionGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Attacked" UniqueID="Alala:Attacked">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Attack />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Neg_5">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:AlarmCall" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="AlarmCall" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFBehExecTask>
+				<BFBehSendToken>
+					<BFAITokenList>
+						<BFAIToken GiveTo="b_LargePrey" Name="t_Flee" Payload="target" Radius="30" Reconsider="true" Timeout="15" />
+						<BFAIToken GiveTo="b_MediumPrey" Name="t_Flee" Payload="target" Radius="30" Reconsider="true" Timeout="15" />
+						<BFAIToken GiveTo="b_SmallPrey" Name="t_Flee" Payload="target" Radius="30" Reconsider="true" Timeout="15" />
+						<BFAIToken GiveTo="subject" Name="t_Flee" Payload="target" Radius="30" Reconsider="true" Timeout="15" />
+					</BFAITokenList>
+				</BFBehSendToken>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Attacked_Young" UniqueID="Alala:Attacked_Young">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Attack />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Neg_5">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken GiveTo="Alala_Adult_F" Name="t_Help" Payload="subject" Radius="30" Reconsider="true" Timeout="15" />
+				</BFAITokenList>
+			</BFBehSendToken>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallForMother" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="AlarmCall" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFBehExecTask>
+				<BFBehSendToken>
+					<BFAITokenList>
+						<BFAIToken GiveTo="b_LargePrey" Name="t_Flee" Payload="target" Radius="30" Reconsider="true" Timeout="15" />
+						<BFAIToken GiveTo="b_MediumPrey" Name="t_Flee" Payload="target" Radius="30" Reconsider="true" Timeout="15" />
+						<BFAIToken GiveTo="b_SmallPrey" Name="t_Flee" Payload="target" Radius="30" Reconsider="true" Timeout="15" />
+						<BFAIToken GiveTo="subject" Name="t_Flee" Payload="target" Radius="30" Reconsider="true" Timeout="15" />
+					</BFAITokenList>
+				</BFBehSendToken>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="HelpYoung" UniqueID="Alala:HelpYoung">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<Alala_Young />
+				<Qualifiers isRelation="child" />
+			</Targets>
+			<Objects>
+				<t_Help />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="1000" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:ProtectYoung" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="AlarmCall" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="EvadeAttack" UniqueID="Alala:EvadeAttack">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Flee />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Neg_5">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:FleeingPredator" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehEvasion avoidWater="true" evasionRadius="25" locoSpeed="evade" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="EvadeAttack" UniqueID="Alala:EvadeAttack">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Flee />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Neg_5">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:FleeingPredator" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehEvasion avoidWater="true" evasionRadius="25" locoSpeed="evade" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="EvadeAttack" UniqueID="Alala:EvadeAttack">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Flee />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Neg_5">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:FleeingPredator" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehEvasion avoidWater="true" evasionRadius="25" locoSpeed="evade" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="IdleEgg" UniqueID="Alala:IdleEgg">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Egg />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<BFBehPlaySet behSet="IdleEgg" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="HatchEgg" UniqueID="Alala:HatchEgg">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Egg />
+				<Qualifiers_AND inWater_OR_onLand="true" incubation="GE 1.04" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="200" />
+		<BFBehExecTask>
+			<BFBehPlaySet behSet="HatchEgg" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="Born" TaskDelayMax="100000" TaskDelayMin="10000" UniqueID="Alala:Born">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND isSwimming="false" lifespan="LE 1" onLand="true" />
+			</Subjects>
+			<Targets>
+				<TreeNest />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="2000" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Born" />
+					<ZTEmoticonInfo emoticonName="EmoteBirth" emoticonScale="0.5" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_5">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalEggHatchedGood" priority="1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehAnimate targetAnim="Stand_ContactCall" />
+			<BFBehEvasion avoidWater="true" evasionRadius="10" locoSpeed="fast" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="CallChild" TaskDelayMax="420" TaskDelayMin="300" UniqueID="Alala:CallChild">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+				<Qualifiers_AND isSwimming="false" onLand="true" />
+			</Subjects>
+			<Targets>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isRelation="child" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="5">
+			<BFAIAttributeFloatMap social="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Pos_3" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="Call" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-30" stimulation="-20" />
+			<BFBehExecTask>
+				<BFBehSendToken>
+					<BFAITokenList>
+						<BFAIToken GiveTo="target" Name="t_Come" Payload="subject" Radius="60" Reconsider="true" Timeout="15" />
+					</BFAITokenList>
+				</BFBehSendToken>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="ChildCome" UniqueID="Alala:ChildCome">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+			</Targets>
+			<Objects>
+				<t_Come />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAnswer" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="Call" />
+			<BFBehMove locoSpeed="fast" moveRadius="5" />
+			<BFBehPlaySet behSet="Sit" />
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallYoungGood" priority="1" timeout="60" useTargetName="true" useTargetSpecies="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap health="-20" social="-20" stimulation="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="CallMother" TaskDelayMax="160" TaskDelayMin="60" UniqueID="Alala:CallMother">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND isSwimming="false" onLand="true" />
+			</Subjects>
+			<Targets>
+				<Alala_Adult_F />
+				<Qualifiers_AND inWater_OR_onLand="true" isRelation="mother" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsBad="10">
+			<BFAIAttributeFloatMap social="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetSpecies="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Call" />
+			<BFBehPlaySet behSet="Sit" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-20" stimulation="-20" />
+			<BFBehExecTask>
+				<BFBehSendToken>
+					<BFAITokenList>
+						<BFAIToken GiveTo="target" Name="t_ComeAdult" Payload="subject" Radius="60" Reconsider="true" Timeout="15" />
+					</BFAITokenList>
+				</BFBehSendToken>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="MotherCome" UniqueID="Alala:MotherCome">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+			</Targets>
+			<Objects>
+				<t_ComeAdult />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAnswer" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="Call" />
+			<BFBehMove locoSpeed="fast" moveRadius="5" />
+			<BFBehPlaySet behSet="Call" />
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetSpecies="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-20" stimulation="-20" />
+			<BFAITargetData health="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="YoungChase" TaskDelayMax="60" TaskDelayMin="30" UniqueID="Alala:YoungChase">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" notInSight="6" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="15">
+			<BFAIAttributeFloatMap social="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:PlayChasing" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPursuit hitRadius="6" locoSpeed="fast" pursuitRadius="15" />
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken GiveTo="target" Name="t_EvadePlayYoung" Payload="subject" Radius="30" Reconsider="true" Timeout="15" />
+				</BFAITokenList>
+			</BFBehSendToken>
+			<BFBehPlaySet behSet="Call" />
+			<BFBehPursuit hitRadius="3" locoSpeed="fast" pursuitRadius="15" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap exercise="-20" social="-20" stimulation="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="YoungEvade" UniqueID="Alala:YoungEvade">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_EvadePlayYoung />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Fleeing" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehEvasion avoidWater="true" evasionRadius="10" locoSpeed="fast" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap exercise="-20" social="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="AdultChase" TaskDelayMax="120" TaskDelayMin="60" UniqueID="Alala:AdultChase">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<Alala_Adult />
+				<Qualifiers_AND inWater_OR_onLand="true" notInSight="6" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="15">
+			<BFAIAttributeFloatMap social="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:PlayChasing" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPursuit hitRadius="6" locoSpeed="fast" pursuitRadius="15" />
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken GiveTo="target" Name="t_EvadePlayAdult" Payload="subject" Radius="30" Reconsider="true" Timeout="15" />
+				</BFAITokenList>
+			</BFBehSendToken>
+			<BFBehPlaySet behSet="Call" />
+			<BFBehPursuit hitRadius="3" locoSpeed="fast" pursuitRadius="15" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap exercise="-20" social="-20" stimulation="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="AdultEvade" UniqueID="Alala:AdultEvade">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_EvadePlayAdult />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Fleeing" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehEvasion avoidWater="true" evasionRadius="10" locoSpeed="fast" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap exercise="-20" social="-20" stimulation="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialVeryGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="MaleAdultChase" TaskDelayMax="120" TaskDelayMin="60" UniqueID="Alala:MaleAdultChase">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_M />
+				<Qualifiers_AND inWater_OR_onLand="true" reproduction="GE 50" />
+			</Subjects>
+			<Targets>
+				<Alala_Adult_M />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsBad="20">
+			<BFAIAttributeFloatMap reproduction="-30" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:ChasingAnimal" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPursuit hitRadius="6" locoSpeed="fast" pursuitRadius="15" />
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken GiveTo="target" Name="t_EvadeAngry" Payload="subject" Radius="30" Reconsider="true" Timeout="15" />
+				</BFAITokenList>
+			</BFBehSendToken>
+			<BFBehPlaySet behSet="Call" />
+			<BFBehPursuit hitRadius="3" locoSpeed="fast" pursuitRadius="15" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAISubjectData exercise="-20" reproduction="-10" rest="20" stimulation="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAngry" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="MaleAdultEvade" UniqueID="Alala:MaleAdultEvade">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<fromToken />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Targets>
+			<Objects>
+				<t_EvadeAngry />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="100" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Fleeing" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Neg_5">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehEvasion avoidWater="true" evasionRadius="15" locoSpeed="fast" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAISubjectData exercise="-20" reproduction="-10" rest="20" stimulation="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAngry" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="FollowMother" UniqueID="Alala:FollowMother">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<Alala_Adult_F />
+				<Qualifiers_AND inWater_OR_onLand="true" isRelation="mother" isSwimming="false" notInSight="5" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore=".1" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:FollowMother" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="Call" />
+			<BFBehPursuit hitRadius="4" locoSpeed="fast" pursuitRadius="8" />
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalFollowMotherGood" priority="1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-2" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="SeekPrivacy" UniqueID="Alala:SeekPrivacy">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<Guest />
+				<Qualifiers inSight="15" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="10">
+			<BFAIAttributeFloatMap privacy="-10" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:SeekingPrivacy" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalPrivacyGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehEvasion evasionRadius="15">
+				<avoidEntityTypes>
+					<Guest />
+				</avoidEntityTypes>
+			</BFBehEvasion>
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAITokenList>
+				<BFAIToken GiveTo="subject" Name="t_Hide" Timeout="30" />
+			</BFAITokenList>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="HideGrass" UniqueID="Alala:HideGrass">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND isSwimming="false" onLand="true" />
+			</Subjects>
+			<Targets>
+				<grass />
+				<Qualifiers_AND inHabitat="true" inSight="15" onLand="true" />
+			</Targets>
+			<Objects>
+				<t_Hide />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="10">
+			<BFAIAttributeFloatMap privacy="-10" />
+			<BFAIBiomeMap alpine=".10" borealforest=".10" desert=".10" grassland=".75" savannah=".75" scrub=".10" temperateforest="1.00" tropicalrainforest=".50" tundra=".10" wetlands=".10" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToHide" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehMove locoSpeed="fast" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAISubjectData privacy="-50" rest="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTActionInfo locID="animalactions:HidingIn" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+				<ZTBehViewEvent viewKey="Pos_4">
+					<ZTFeedbackData>
+						<ZTThoughtInfo global="false" locID="guestthoughts:AnimalHideGrassGood" priority="1" timeout="60" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehViewEvent>
+				<BFBehPlaySet behSet="Rest" />
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalPrivacyGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="CheckEgg" UniqueID="Alala:CheckEgg">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Adult_F />
+				<Qualifiers_AND inWater_OR_onLand="true" isSwimming="false" />
+			</Subjects>
+			<Targets>
+				<Alala_Egg />
+				<Qualifiers_AND isRelation="child" notInSight="5" onLand="true" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData>
+			<BFAIAttributeFloatMap social="-40" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CheckingEgg" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehDockRadial subjectNode="p_EggOffset" targetAnim="Stand_Idle" />
+			<BFBehPlaySet behSet="FeedYoung" />
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCheckEggGood" priority="1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap social="-20" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalSocialGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="DustBathe" TaskDelayMax="120" TaskDelayMin="60" UniqueID="Alala:DustBathe">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+			</Subjects>
+			<Targets />
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData needPointsGood="15">
+			<BFAIAttributeFloatMap hygiene="-30" />
+			<BFAIBiomeMap alpine=".25" borealforest=".75" desert=".25" grassland=".50" savannah=".50" scrub=".25" temperateforest="1.00" tropicalrainforest=".25" tundra=".25" wetlands="0.35" />
+		</BFAIEvalData>
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToDustBathe" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehMove />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTActionInfo locID="animalactions:TakingDustBath" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+				<ZTBehViewEvent viewKey="Pos_4">
+					<ZTFeedbackData>
+						<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDustBathGood" priority="1" timeout="60" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehViewEvent>
+				<BFBehPlaySet behSet="DustBathe" />
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTEmoticonInfo emoticonName="EmoteAnimalHygieneGood" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+			<BFAIAttributeFloatMap hygiene="-40" stimulation="-10" />
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="ThrashWater" UniqueID="Alala:ThrashWater">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND breath="LE 95" isFloating="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="10000" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Drowning" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Neg_8">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDrownBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="ThrashWater" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap breath=".65" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalDrowning" priority="-1" timeout="15" useTargetName="true" />
+						<ZTEmoticonInfo emoticonName="EmoteAngry" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="ThrashWater_Drowning" UniqueID="Alala:ThrashWater_Drowning">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND breath="GE 95" health="LE 95" isFloating="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="10000" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Drowning" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Neg_8">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDrownBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="ThrashWater" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap breath=".65" health=".4" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalLowBreath" priority="-1" timeout="15" useTargetName="true" />
+						<ZTEmoticonInfo emoticonName="EmoteAngry" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="ThrashWater_Old" UniqueID="Alala:ThrashWater_Old">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND isFloating="true" lifespan="GE 13.42" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="10045" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Drowning" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Neg_8">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDrownBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="ThrashWater" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFAIAttributeFloatMap breath=".65" health=".4" />
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalDrowning" priority="-1" timeout="15" useTargetName="true" />
+						<ZTEmoticonInfo emoticonName="EmoteAngry" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+				<BFBehSendToken>
+					<BFAITokenList>
+						<BFAIToken Chance="0.5" GiveTo="target" Name="t_DrownOld" Payload="subject" Reconsider="true" Timeout="15" />
+					</BFAITokenList>
+				</BFBehSendToken>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="ThrashWater_Die" UniqueID="Alala:ThrashWater_Die">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND breath="GE 95" health="GE 95" isFloating="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="10050" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Drowning" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Neg_8">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDrownBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Die_Drown" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFBehExecTask>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalDieBreath" priority="-1" timeout="15" useTargetName="true" />
+						<ZTEmoticonInfo emoticonName="EmoteAngry" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="ThrashWater_DieOld" UniqueID="Alala:ThrashWater_DieOld">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+				<Qualifiers_AND isFloating="true" />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects>
+				<t_DrownOld />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="10050" />
+		<BFBehExecTask>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Drowning" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Neg_8">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDrownBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Die_Drown" />
+		</BFBehExecTask>
+		<BFAICompletionData>
+			<BFBehExecTask>
+				<ZTBehViewEvent viewKey="Neg_10">
+					<ZTFeedbackData>
+						<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDiedBad" priority="-1" timeout="60" useTargetName="true" />
+					</ZTFeedbackData>
+				</ZTBehViewEvent>
+				<ZTBehFeedback>
+					<ZTFeedbackData>
+						<ZTMessageInfo global="true" locID="zoomessages:AnimalDied" priority="-1" timeout="60" useEntityName="true" />
+					</ZTFeedbackData>
+				</ZTBehFeedback>
+			</BFBehExecTask>
+		</BFAICompletionData>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="GetOffTrack_Alala" UniqueID="Alala:GetOffTrack_Alala">
+		<BFAICreateData>
+			<Subjects>
+				<Alala />
+			</Subjects>
+			<Targets>
+				<self />
+			</Targets>
+			<Objects>
+				<t_GetOffTrack />
+			</Objects>
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="5100" />
+		<BFBehExecTask>
+			<BFBehWander avoidWater="true" locoSpeed="fast" maxPlayTime="10" minPlayTime="5">
+				<avoidEntityTypes>
+					<GroundTrack_df />
+					<groundvehicle />
+				</avoidEntityTypes>
+			</BFBehWander>
+		</BFBehExecTask>
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+	<BFAITaskTemplate Name="EvadePredator_Young" UniqueID="Alala:EvadePredator_Young">
+		<BFAICreateData>
+			<Subjects>
+				<Alala_Young />
+				<Qualifiers inWater_OR_onLand="true" />
+			</Subjects>
+			<Targets>
+				<b_XLargePredator />
+				<b_LargePredator />
+				<b_MediumPredator />
+				<b_SmallPredator />
+				<Qualifiers_AND inSight="2" sameSpecies="false" />
+			</Targets>
+			<Objects />
+		</BFAICreateData>
+		<BFAIEvalData fixedScore="85" />
+		<BFBehExecTask>
+			<ZTBehViewEvent viewKey="Neg_2">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalChasedBad" priority="-1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:FleeingPredator" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehEvasion avoidWater="true" evasionRadius="30" locoSpeed="evade" />
+		</BFBehExecTask>
+		<BFAICompletionData />
+		<BFAIFailureData>
+			<BFBehExecTask>
+				<BFBehPlaySet behSet="FailureSet" />
+			</BFBehExecTask>
+		</BFAIFailureData>
+	</BFAITaskTemplate>
+</BFAITaskTemplateList>

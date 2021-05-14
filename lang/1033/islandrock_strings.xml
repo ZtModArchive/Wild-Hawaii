@@ -1,0 +1,126 @@
+<ZT2Strings>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Large_A">Large Volcanic Rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Large_A_stt">Large Volcanic rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Large_A_lower">the large Volcanic rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Large_A_ltt">
+         <color r="255" g="248" b="178">
+            <b>Large Volcanic Rock</b>
+         </color>
+         <br/>
+         
+         
+         
+         Click to select and then place a large Volcanic rock, which is appropriate for Hawaiian exhibits.
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Medium_A">Medium Volcanic Rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Medium_A_stt">Medium Volcanic rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Medium_A_lower">the medium Volcanic rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Medium_A_ltt">
+         <color r="255" g="248" b="178">
+            <b>Medium Volcanic Rock</b>
+         </color>
+         <br/>
+         
+         
+         
+         
+         Click to select and then place a medium-sized Volcanic rock, which is appropriate for Hawaiian exhibits.
+      
+      
+      
+      
+      
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Small_A">Small Volcanic Rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Small_A_stt">Small Volcanic rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Small_A_lower">the small Volcanic rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Volcanic_Small_A_ltt">
+         <color r="255" g="248" b="178">
+            <b>Small Volcanic Rock</b>
+         </color>
+         <br/>
+         
+         
+         
+         
+         Click to select and then place a small Volcanic rock, which is appropriate for Hawaiian exhibits.
+      
+      
+      
+      
+      
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Small_A">Small Algae Rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Small_A_stt">Small algae rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Small_A_lower">the small algae rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Small_A_ltt">
+         <color r="255" g="248" b="178">
+            <b>Small Algae Rock</b>
+         </color>
+         <br/>
+         
+         
+         
+         Click to select and then place a small algae rock, which is appropriate for aquatic exhibits.
+      
+      
+      
+      
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Medium_A">Medium Algae Rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Medium_A_stt">Medium algae rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Medium_A_lower">the medium algae rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Medium_A_ltt">
+         <color r="255" g="248" b="178">
+            <b>Medium Algae Rock</b>
+         </color>
+         <br/>
+         
+         
+         
+         
+         Click to select and then place a medium-sized algae rock, which is appropriate for aquatic exhibits.
+      
+      
+      
+      
+      
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Large_A">Large Algae Rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Large_A_stt">Large algae rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Large_A_lower">the large algae rock</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rock_Algae_Large_A_ltt">
+         <color r="255" g="248" b="178">
+            <b>Large Algae Rock</b>
+         </color>
+         <br/>
+         
+         
+         
+         
+         
+         
+         
+         
+         Click to select and then place a large algae rock, which is appropriate for aquatic exhibits.
+      
+      
+      
+      
+      
+      
+      </LOC_STRING>
+</ZT2Strings>

@@ -1,0 +1,27 @@
+<BFTypedBinder binderType="Puaiohi_Young_M">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Puaiohi>
+									<Puaiohi_Young>
+										<Puaiohi_Young_M />
+									</Puaiohi_Young>
+								</Puaiohi>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<BFAIEntityDataShared b_Male="1" />
+	</shared>
+</BFTypedBinder>

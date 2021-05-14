@@ -1,0 +1,161 @@
+<BFM modelname="entities/units/animals/Alala/Alala_Adult_F.nif">
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Fly_2Stand.bf" animName="Fly_2Stand" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Fly_Ahead.bf" animName="Fly_Ahead" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Fly_Right.bf" animName="Fly_Right" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Fly_Left.bf" animName="Fly_Left" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Hop_2Stand.bf" animName="Hop_2Stand" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Hop_Ahead.bf" animName="Hop_Ahead" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Hop_Right.bf" animName="Hop_Right" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Hop_Left.bf" animName="Hop_Left" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Sit_2Stand.bf" animName="Sit_2Stand" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Sit_Idle.bf" animName="Sit_Idle" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_2Fly.bf" animName="Stand_2Fly" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_2Hop.bf" animName="Stand_2Hop" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_2Sit.bf" animName="Stand_2Sit" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_2Walk.bf" animName="Stand_2Walk" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_Call.bf" animName="Stand_Call" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_Drink.bf" animName="Stand_Drink" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_Eat.bf" animName="Stand_Eat" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_EatTear.bf" animName="Stand_EatTear" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_CleanWingL.bf" animName="Stand_CleanWingL" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_CleanWingR.bf" animName="Stand_CleanWingR" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_Idle.bf" animName="Stand_Idle" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Mate_Idle.bf" animName="Mate_Idle" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_2Mate.bf" animName="Stand_2Mate" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Mate_2Stand.bf" animName="Mate_2Stand" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_Nervous.bf" animName="Stand_Nervous" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_Poop.bf" animName="Stand_Poop" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_TurnLeft90.bf" animName="Stand_TurnLeft90" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_TurnRight90.bf" animName="Stand_TurnRight90" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Walk_2Stand.bf" animName="Walk_2Stand" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Walk_Ahead.bf" animName="Walk_Ahead" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Walk_Right.bf" animName="Walk_Right" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Walk_Left.bf" animName="Walk_Left" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Fly_2Stand.bf" animName="Fly_2Perch" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_2Fly.bf" animName="Perch_2Fly" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_Idle.bf" animName="Perch_Idle" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_Call.bf" animName="Perch_Call" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_CleanWingL.bf" animName="Perch_CleanWingL" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<animation allowSpineBending="false" anim="entities\units\animals\JayEurasian\Stand_CleanWingR.bf" animName="Perch_CleanWingR" animSpeed="1" debug="false" explicitUseOnly="false" groundFitRotation="true" load="true" pitchSpeed="0" resolveUnitCollisions="true" rollSpeed="0" yawSpeed="0" />
+	<Graph name="Alala_Adult_F" version="1">
+		<node name="Mate">
+			<table>
+				<Mate_Idle />
+			</table>
+			<edge name="Stand">
+				<table>
+					<Mate_2Stand />
+				</table>
+			</edge>
+		</node>
+		<node name="Fly">
+			<table>
+				<Fly_Ahead />
+				<Fly_Left />
+				<Fly_Right />
+			</table>
+			<edge name="Stand">
+				<table>
+					<Fly_2Stand />
+				</table>
+			</edge>
+			<edge name="Perch">
+				<table>
+					<Fly_2Perch />
+				</table>
+			</edge>
+		</node>
+		<node name="Hop">
+			<table>
+				<Hop_Ahead />
+				<Hop_Left />
+				<Hop_Right />
+			</table>
+			<edge name="Stand">
+				<table>
+					<Hop_2Stand />
+				</table>
+			</edge>
+		</node>
+		<node name="Sit">
+			<table>
+				<Sit_Idle />
+			</table>
+			<edge name="Stand">
+				<table>
+					<Sit_2Stand />
+				</table>
+			</edge>
+		</node>
+		<node name="Stand">
+			<table>
+				<Stand_Call />
+				<Stand_Drink />
+				<Stand_Eat />
+				<Stand_EatTear />
+				<Stand_CleanWingL />
+				<Stand_CleanWingR />
+				<Stand_Idle />
+				<Stand_Nervous />
+				<Stand_Poop />
+				<Stand_TurnLeft90 />
+				<Stand_TurnRight90 />
+			</table>
+			<edge name="Mate">
+				<table>
+					<Stand_2Mate />
+				</table>
+			</edge>
+			<edge name="Drown">
+				<table>
+					<Stand_2Drown />
+				</table>
+			</edge>
+			<edge name="Fly">
+				<table>
+					<Stand_2Fly />
+				</table>
+			</edge>
+			<edge name="Hop">
+				<table>
+					<Stand_2Hop />
+				</table>
+			</edge>
+			<edge name="Sit">
+				<table>
+					<Stand_2Sit />
+				</table>
+			</edge>
+			<edge name="Walk">
+				<table>
+					<Stand_2Walk />
+				</table>
+			</edge>
+		</node>
+		<node name="Perch">
+			<table>
+				<Perch_Call />
+				<Perch_CleanWingL />
+				<Perch_CleanWingR />
+				<Perch_Idle />
+			</table>
+			<edge name="Fly">
+				<table>
+					<Perch_2Fly />
+				</table>
+			</edge>
+		</node>
+		<node name="Walk">
+			<table>
+				<Walk_Ahead />
+				<Walk_Left />
+				<Walk_Right />
+			</table>
+			<edge name="Stand">
+				<table>
+					<Walk_2Stand />
+				</table>
+			</edge>
+		</node>
+	</Graph>
+</BFM>

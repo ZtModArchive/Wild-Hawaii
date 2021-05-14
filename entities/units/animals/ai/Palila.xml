@@ -1,0 +1,132 @@
+<BFTypedBinder abstract="true" binderType="Palila">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Palila />
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<UIToggleButton template="adopt">
+			<UIHelpInfo ids="entityname:Palila" />
+			<on>
+				<event data="BFString" msg="ZT_SETPLACEMENTOBJECT" string="Palila_Adult_F" />
+			</on>
+			<UIAspect>
+				<default image="entities/units/animals/Palila/Palila_Adult_F_icon.dds" />
+			</UIAspect>
+		</UIToggleButton>
+		<BFAIEntityDataShared b_Aerial="true" b_Ambivore="false" b_Basic="true" b_BerriesEater="true" b_Cancrivorous="false" b_Carnivore="false" b_Crustacivore="false" b_ElevatedFoodDishEater="true" b_ElevatedNestBoxUser="true" b_EucalyptusEater="false" b_Folivore="false" b_FoodDishEater="true" b_Frugivore="false" b_Fucivore="false" b_Graminivore="false" b_Granivore="false" b_HoneyEater="false" b_Insectivore="true" b_JellyfishEater="false" b_MarineCarnivore="false" b_MarinePiscivore="false" b_MetalTroughEater="false" b_PerchesBirchTree="true" b_PerchesBurOak="true" b_PerchesDurianTree="true" b_PerchesElephantEarTree="true" b_PerchesEvergreenOak="true" b_PerchesKapokTree="true" b_PerchesKilyTree="true" b_PerchesLookoutPost="true" b_PerchesMapleTree="true" b_PerchesOrchidTree="true" b_PerchesPerepatTree="true" b_PerchesShepardsTree="true" b_PerchesSydneyBlueGum="true" b_PerchesYellowIpeTree="true" b_Piscivore="false" b_Planktivore="false" b_PrechesGrousePerch="true" b_Radicivore="false" b_SeedsEater="true" b_SmallAnimal="true" b_SmallPrey="true" b_SquidEater="false" b_SubstratePileEater="true" b_TemperateForestAnimal="true" b_TermiteMoundUser="false" b_TropicalRainforestOdd="true" b_TroughEater="false" f_BaseDonationAmount="60" f_LocoSearchHorizon="25" f_MaxTourValue="20" f_RequiredAdditionalSpace="1" f_RequiredInitialSpace="1" f_adoptRarity="1" f_adoptRemoveTime="0" p_EggOffset="0 -.5 0" p_FightOffset="0 -.75 180" p_MateOffset="-1 0 0" p_PreyOffset="0 1 0" s_DonateToken="t_DonatePalila" s_Endangerment="Critical" s_KeeperDrinkType="FoodDish_BirdWater" s_KeeperEatType="Terrain_Insects" s_Species="Palila" s_Zoopedia="zoopedia:zoopedia_Palila:entry" />
+		<BFGBiomeData location="coastal_hawaii" locationSensitivity="10">
+			<alpine sensitivity="-4" />
+			<benthic sensitivity="-4" />
+			<borealforest sensitivity="-4" />
+			<coastal sensitivity="5" />
+			<desert sensitivity="-5" />
+			<grassland sensitivity="5" />
+			<reef sensitivity="10" />
+			<pelagic sensitivity="-4" />
+			<temperateforest sensitivity="-5" />
+			<tropicaldryforest sensitivity="10" primary="true" />			<tropicalrainforest sensitivity="10" />
+			<tundra sensitivity="-4" />
+			<savannah sensitivity="-4" />
+			<scrub sensitivity="-4" />
+			<wetlands sensitivity="10" />
+		</BFGBiomeData>
+		<ZTPlacementData icon3Doffset="0 0 0.9" icon3Dscale="5" />
+		<ZTUserStaffAction>
+			<SetAttribute effect="SuperStaffGroom" locid="superstaff:animal_groom" name="hygiene" threshold="20" value="0" />
+			<SetAttribute locid="superstaff:animal_heal" name="health" threshold="20" value="0" />
+		</ZTUserStaffAction>
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					<BFShadowLODComponent numLevels="1" switchingDists="60.0" />
+					<BFActorComponent actorfile="entities/units/animals/Palila/Palila_Adult_F.bfm" scale="0.75" />
+					<BF2LegsGroundFitComponent ankleRotVectorLeft="0 0 -1" ankleRotVectorRight="0 0 -1" backBuoyancyNode="Node_Buoy_Back" fitRadius=".15" frontBuoyancyNode="Node_Buoy" heightOffset="0" leftAnkleJoint="Bip01 L Foot" rightAnkleJoint="Bip01 R Foot" />
+					<BFForwardMovingComponent />
+					<BFRotYawMovingComponent />
+					<BFCollisionComponent grid="Bip01 Spine" />
+					<BFGridCollisionComponent />
+				</BFPhysObj>
+			</instance>
+			<shared>
+				<BFTextTagMacrosComponent>
+					<MACROS>
+						<macro name="Walky" text="anim &apos;Walk_Ahead&apos;" />
+						<macro name="PerchMapleTree" text="!anim &apos;Stand_Idle&apos; blend .3 advance_cur_t, exit" />
+						<macro name="Walky2Standy" text="anim &apos;Walk_2Stand&apos;, anim&apos;Stand_Idle&apos;" />
+						<macro name="Stand2LieBelly" text="anim &apos;Stand_2Sit&apos;, anim &apos;Sit_Idle&apos;" />
+						<macro name="LieBelly2Stand" text="anim &apos;Sit_2Stand&apos;, anim &apos;Stand_Idle&apos;" />
+						<macro name="Standy2Walky" text="anim &apos;Stand_2Walk&apos;, anim &apos;Walk_Left&apos;" />
+						<macro name="LieOnBelly" text="anim &apos;Sit_Idle&apos;" />
+						<macro name="TurnLeft180" text="anim &apos;Stand_TurnLeft90&apos;, anim &apos;Stand_TurnLeft90&apos;" />
+						<macro name="TurnRight180" text="anim &apos;Stand_TurnRight90&apos;, anim &apos;Stand_TurnRight90&apos;" />
+						<macro name="Ground2Perch" text="as 100 1, anim &apos;Stand_2Fly&apos;" />
+						<macro name="Perch2Ground" text="as 100 1, anim &apos;Fly_2Stand&apos;" />
+						<macro name="Ground2PerchSleep" text="as 100 1, anim &apos;Stand_2Fly&apos;, anim &apos;Fly_2Stand&apos;" />
+						<macro name="Ground2PerchElevatedBirdFeeder" text="as 100 1, anim &apos;Stand_2Fly&apos;, anim &apos;Fly_2Stand&apos;" />
+					</MACROS>
+				</BFTextTagMacrosComponent>
+			</shared>
+		</BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFBehaviorMgr behaviorVersion="1">
+					<subBehaviors>
+						<BFBehAnimate interruptFlag="true" interruptible="true" loopFlag="true" targetAnim="Stand_Idle" />
+					</subBehaviors>
+				</BFBehaviorMgr>
+			</instance>
+		</BFBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFLocomotionMgr />
+			</instance>
+			<binder>
+				<BFNamedBinder binderName="ground" required="1">
+					<instance>
+						<BFLocoAnimate version="1">
+							<stop name="Stand" />
+							<slow name="Walk" />
+							<medium name="Walk" />
+							<fast name="Fly" />
+							<fly name="Fly" />
+							<hop name="Hop" />
+							<evade maxAnimSpeed="1.3" minAnimSpeed="1" name="Fly" />
+						</BFLocoAnimate>
+					</instance>
+				</BFNamedBinder>
+			</binder>
+		</BFBinder>
+		<BFNamedBinder binderName="foodprop" repopulateMethod="byName" required="1">
+			<instance>
+				<BFGEntityContainer>
+					<slots>
+						<BFGEntityContainerSlot capacity="1" hideContents="false" ownContents="false" />
+					</slots>
+				</BFGEntityContainer>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder>
+			<instance>
+				<ZTEconomyComponent cost="1250">
+					<ZTTransaction category="animal" costType="parent" name="build" type="debit" />
+				</ZTEconomyComponent>
+			</instance>
+		</BFBinder>
+	</binder>
+</BFTypedBinder>

@@ -1,0 +1,27 @@
+<BFTypedBinder binderType="ChickenKauai_Young_M">
+   <types>
+      <entity>
+         <actor>
+            <animal>
+               <Aves>
+                  <Galliformes>
+                     <Phasianidae>
+                        <ChickenKauai>
+                           <ChickenKauai_Young>
+                              <ChickenKauai_Young_M/>
+                           </ChickenKauai_Young>
+                        </ChickenKauai>
+                     </Phasianidae>
+                  </Galliformes>
+               </Aves>
+            </animal>
+         </actor>
+      </entity>
+   </types>
+   <instance>
+      <BFGEntity/>
+   </instance>
+   <shared>
+      <BFAIEntityDataShared b_Male="1"/>
+   </shared>
+</BFTypedBinder>

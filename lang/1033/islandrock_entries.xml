@@ -1,0 +1,62 @@
+<ZT2Strings>
+      <LOC_STRING _locID="zoopedia_VolcanicRocks:entry">Volcanic Rocks</LOC_STRING>
+      <LOC_STRING _locID="zoopedia_VolcanicRocks:text">
+         <cell pady="0" width="1000"/>
+         <p/>
+         <cell width="260"/>
+         <cell width="640" height="320" bgimg="ui/zoopedia/topCellBg.dds">
+            <cell width="600" padx="20" pady="20">
+               <color r="255" g="255" b="255">
+                  <img src="entities/objects/rocks/Lava/Rock_Lava_Small_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+                  <img src="entities/objects/rocks/Lava/Rock_Lava_Medium_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+                  <img src="entities/objects/rocks/Lava/Rock_Lava_Large_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+                  <p/>
+                  
+                  
+                  
+				Volcanic Rocks are best for areas of volcanic activity such 
+				as the Hawaiian islands.
+<p/>Designed and made by 
+<a href="zoopedia:zoopedia_artifex:entry">
+                 <u>
+                    <color r="255" g="231" b="135">Artifex.</color>
+                 </u>
+              </a>
+				
+               
+               
+               </color>
+            </cell>
+         </cell>
+      </LOC_STRING>
+      <LOC_STRING _locID="zoopedia_algaerocks:entry">Algae Rocks</LOC_STRING>
+      <LOC_STRING _locID="zoopedia_algaerocks:text">
+         <cell pady="0" width="1000"/>
+         <p/>
+         <cell width="260"/>
+         <cell width="640" height="320" bgimg="ui/zoopedia/topCellBg.dds">
+            <cell width="600" padx="20" pady="20">
+               <color r="255" g="255" b="255">
+                  <img src="entities/objects/rocks/Algae/Rock_Algae_Small_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+                  <img src="entities/objects/rocks/Algae/Rock_Algae_Medium_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+                  <img src="entities/objects/rocks/Algae/Rock_Algae_Large_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+                  <p/>
+                  
+                  
+                  
+               Algae rocks provide the perfect touch for a coastal or other aquatic exhibit. They work especially well
+		in tidal areas or under the water where the algae can grow.
+<p/>Designed and made by 
+<a href="zoopedia:zoopedia_artifex:entry">
+                 <u>
+                    <color r="255" g="231" b="135">Artifex.</color>
+                 </u>
+              </a>
+				
+               
+               
+               </color>
+            </cell>
+         </cell>
+      </LOC_STRING>
+</ZT2Strings>

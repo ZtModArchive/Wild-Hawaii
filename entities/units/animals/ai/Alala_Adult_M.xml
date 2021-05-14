@@ -1,0 +1,32 @@
+<BFTypedBinder binderType="Alala_Adult_M">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Alala>
+									<Alala_Adult>
+										<Alala_Adult_M />
+									</Alala_Adult>
+								</Alala>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<UIToggleButton template="adopt">
+			<on>
+				<event data="BFString" msg="ZT_SETPLACEMENTOBJECT" string="Alala_Adult_M" />
+			</on>
+		</UIToggleButton>
+		<BFAIEntityDataShared b_Male="1" f_adoptCount="rand(1,4)" />
+	</shared>
+</BFTypedBinder>

@@ -1,0 +1,7 @@
+<entries>
+   <BFHelpEntry entry="zoopedia_home">
+      <BFHelpEntry entry="zoopedia_foliage">
+<BFHelpEntry entry="zoopedia_Alula" order="zoopedia_Alula"/>
+      </BFHelpEntry>
+   </BFHelpEntry>
+</entries>

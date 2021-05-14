@@ -1,0 +1,46 @@
+<BFTypedBinder binderType="ChickenKauai_Adult_M">
+   <types>
+      <entity>
+         <actor>
+            <animal>
+               <Aves>
+                  <Galliformes>
+                     <Phasianidae>
+                        <ChickenKauai>
+                           <ChickenKauai_Adult>
+                              <ChickenKauai_Adult_M/>
+                           </ChickenKauai_Adult>
+                        </ChickenKauai>
+                     </Phasianidae>
+                  </Galliformes>
+               </Aves>
+            </animal>
+         </actor>
+      </entity>
+   </types>
+   <instance>
+      <BFGEntity/>
+   </instance>
+   <shared>
+      <UIToggleButton template="adopt">
+         <UIAspect>
+            <default image="entities\units\animals\ChickenKauai\ChickenKauai_Adult_M_icon.dds"/>
+         </UIAspect>
+         <UIHelpInfo ids="entityname:ChickenKauai"/>
+         <on>
+            <event msg="ZT_SETPLACEMENTOBJECT" data="BFString" string="ChickenKauai_Adult_M"/>
+         </on>
+      </UIToggleButton>
+      <BFAIEntityDataShared b_Male="1" f_adoptCount="rand(1,4)"/>
+      <ZTPlacementData icon3Dscale="0.85"/>
+   </shared>
+   <binder>
+      <BFNamedBinder binderName="mainObj">
+         <instance>
+            <BFPhysObj>
+               <BFActorComponent actorfile="entities/units/animals/ChickenKauai/ChickenKauai_Adult_M.bfm" scale="0.6"/>
+            </BFPhysObj>
+         </instance>
+      </BFNamedBinder>
+   </binder>
+</BFTypedBinder>

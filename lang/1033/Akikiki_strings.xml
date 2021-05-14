@@ -1,0 +1,137 @@
+﻿<ZT2Strings>
+	<entityname>
+		<!--animal names-->
+		<Akikiki>'Akikiki</Akikiki>
+		<Akikiki_stt>'Akikiki</Akikiki_stt>
+		<Akikiki_lower>the 'Akikiki</Akikiki_lower>
+		<Akikiki_ltt>
+			<color r="255" g="248" b="178">
+				<b>'Akikiki</b>
+			</color>
+			<br/>
+			Click to select and then place an 'Akikiki, a rare honeycreeper from Kaua'i.
+		</Akikiki_ltt>
+		<!--egg names-->
+		<AkikikiNest>'Akikiki-Nest</AkikikiNest>
+		<AkikikiNest_stt>'Akikiki-Nest</AkikikiNest_stt>
+		<AkikikiNest_lower>the 'Akikiki-Nest</AkikikiNest_lower>
+		<AkikikiNest_ltt>
+			<color r="255" g="248" b="178">
+				<b>'Akikiki-Nest</b>
+			</color>
+			<br/>
+			Click to select and then place a egg of 'Akikiki.
+		</AkikikiNest_ltt>
+	</entityname>
+	
+	<!--zoopedia entries-->
+	<zoopedia_Akikiki>
+		<entry>'Akikiki</entry>
+		<text>
+			<cell pady="0" width="1000"/>
+			<p/>
+			<cell width="260"/>
+			<cell width="640" height="320" bgimg="ui/zoopedia/topCellBg.dds">
+				<cell width="600" padx="20" pady="20">
+					<cell width="284">
+						<cell width="96" bgimg="ui/zoopedia/littleBox-128.tga">
+							<img src="entities/units/animals/Akikiki/Akikiki_Adult_F_icon.dds" sx="0" sy="0" sw="64" sh="64" height="96" width="96"/>						
+						</cell>
+						<cell width="16">
+							<img src="ui/zoopedia/icon_male.dds" sx="0" sy="0" sw="64" sh="64" width="16" height="16"/>
+						</cell>
+						<cell width="16">
+							<img src="ui/zoopedia/icon_female.dds" sx="0" sy="0" sw="64" sh="64" width="16" height="16"/>
+						</cell>
+						<cell width="156"/>
+						<br/>	
+						<cell width="32" pady="0">					
+							<img src="ui/zoopedia/LowRisk.dds" sx="0" sy="0" sw="64" sh="64" width="32" height="32"/>
+						</cell>
+						<cell width="224" padx="10" pady="0">
+							<color r="255" g="255" b="255">
+							Conservation status:
+							<br/>
+								<color r="0" g="255" b="0">
+									Low Risk
+								</color>
+							</color>						
+						</cell>
+					</cell>				
+				
+					<cell width="128">
+						<color r="255" g="255" b="255">Temperate forest<br/></color>
+						<img src="ui/icon_biomes/icon_temperateforest.dds" sx="0" sy="0" sw="128" sh="128" width="96" height="96"/>
+					</cell>
+					<cell width="128">
+						<color r="255" g="255" b="255">North America<br/></color>
+						<img src="ui/icon_maplocations/Temperateforest_America_North.dds" sx="0" sy="0" sw="256" sh="256" width="96" height="96"/>
+					</cell>
+					<br/>
+					<cell width="284" pady="10">
+						<color r="255" g="255" b="255">
+							Class: Birds <i>(Aves)</i><br/>
+							Order: Passerines <i>(Passeriformes)</i><br/>
+							Family: Corvids <i>(Corvidae)</i><br/>
+							Genus:  <i>Cyanocitta</i><br/>
+							Species:  <i>cristata</i><br/>
+
+						</color>
+					</cell>
+					<cell width="256" pady="10">
+						<img src="UI/zoopedia/biome/temperateforest_zoopedia_biomebrush.dds" sx="0" sy="0" sw="256" sh="85"/>
+					</cell>
+				</cell>
+			</cell>
+			<p/>
+			<p/>
+			<cell width="260"/>
+			<cell width="300">
+				<cell width="64">
+					<img src="ui/zoopedia/fact-icon64.tga" sx="0" sy="0" sw="64" sh="64"/>
+				</cell>
+				<cell width="176">
+					<color r="255" g="255" b="255">
+						<font name="arial" size="12" shadowx="2" shadowy="1" shadowa="50">Fun 'Akikiki Facts</font>
+					</color>
+				</cell>
+				<p/>
+				<cell width="280" bgimg="ui/zoopedia/factBG.tga" padx="10">
+					<p/>
+					<cell width="32" pady="10">
+						<img src="ui/zoopedia/fact-bullet.tga" sx="0" sy="0" sw="32" sh="32"/>
+					</cell>
+					<cell width="202" pady="10">
+						<color r="255" g="255" b="255">The bird's name derives from its noisy, garrulous nature. It is sometimes called a "jaybird".</color>
+					</cell>
+					<br/>
+					<cell width="32" pady="10">
+						<img src="ui/zoopedia/fact-bullet.tga" sx="0" sy="0" sw="32" sh="32"/>
+					</cell>
+					<cell width="202" pady="10">
+						<color r="255" g="255" b="255">Four subspecies are generally accepted, though the variation within this species is rather subtle and essentially clinal. No firm boundaries can be drawn between the inland subspecies. The ranges of the coastal races are better delimited.</color>
+					</cell>
+					<br/>
+					<cell width="32" pady="10">
+						<img src="ui/zoopedia/fact-bullet.tga" sx="0" sy="0" sw="32" sh="32"/>
+					</cell>
+					<cell width="202" pady="10">
+						<color r="255" g="255" b="255">The 'Akikiki was adopted as the team symbol of the Toronto 'Akikikis Major League Baseball team, as well as some of their minor-league affiliates. Their mascot is Ace, also a 'Akikiki.</color>
+					</cell>
+					<br/>
+				</cell>
+			</cell>
+			<cell width="340">
+			<color r="255" g="248" b="178">To unlock the 'Akikiki in challenge or campaign games, you must earn a 1/2 zoo fame rating for your zoo.</color>
+			<p/>The 'Akikiki (Cyanocitta cristata) is a passerine bird in the family Corvidae, native to North America. It is resident through most of eastern and central United States and southern Canada, although western populations may be migratory. It breeds in both deciduous and coniferous forests, and is common near and in residential areas. It is predominately blue with a white chest and underparts, and a blue crest. It has a black, U-shaped collar around its neck and a black border behind the crest. Sexes are similar in size and plumage, and plumage does not vary throughout the year. Four subspecies of the 'Akikiki are recognized.
+<br/>
+<br/>The 'Akikiki mainly feeds on nuts and seeds such as acorns, soft fruits, arthropods, and occasionally small vertebrates. It typically gleans food from trees, shrubs, and the ground, though it sometimes hawks insects from the air. Like squirrels, 'Akikikis are known to hide nuts for later consumption. It builds an open cup nest in the branches of a tree, which both sexes participate in constructing. The clutch can contain two to seven eggs, which are blueish or light brown with brown spots. Young are altricial, and are brooded by the female for 8–12 days after hatching. They may remain with their parents for one to two months.
+
+			</cell>
+			<p/>
+			<cell width="260"/>
+			<cell width="620"><color r="255" g="231" b="135">Made by HENDRIX</color>
+			</cell>			
+		</text>
+	</zoopedia_Akikiki>
+</ZT2Strings>

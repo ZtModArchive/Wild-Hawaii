@@ -1,0 +1,1409 @@
+<BehaviorSets>
+	<Default_Happy>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehViewEvent viewKey="Pos_2">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalHappy" priority="0" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehRandomSet>
+				<randomSets>
+					<DefaultStand weight="70" />
+					<DefaultHappy weight="10" />
+					<PeckGround weight="20" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Default_Happy>
+	<Default_VeryHappy>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehViewEvent viewKey="DPos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalVeryHappy" priority="1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehRandomSet>
+				<randomSets>
+					<DefaultStand weight="60" />
+					<DefaultHappy weight="20" />
+					<PeckGround weight="20" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Default_VeryHappy>
+	<Default_Happy_inWater>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehViewEvent viewKey="Pos_2">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalHappy" priority="0" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehRandomSet>
+				<randomSets>
+					<DefaultStand weight="90" />
+					<Default_inWater_Happy weight="10" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Default_Happy_inWater>
+	<Default_VeryHappy_inWater>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehViewEvent viewKey="DPos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalVeryHappy" priority="1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehRandomSet>
+				<randomSets>
+					<DefaultStand weight="80" />
+					<Default_inWater_Happy weight="20" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Default_VeryHappy_inWater>
+	<Default_Unhappy>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehViewEvent viewKey="Neg_2">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalUnhappy" priority="-1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehRandomSet>
+				<randomSets>
+					<DefaultStand weight="70" />
+					<DefaultUnhappy weight="10" />
+					<PeckGround weight="20" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Default_Unhappy>
+	<Default_VeryUnhappy>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehViewEvent viewKey="Neg_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalVeryUnhappy" priority="2" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehRandomSet>
+				<randomSets>
+					<DefaultStand weight="60" />
+					<DefaultUnhappy weight="20" />
+					<PeckGround weight="20" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Default_VeryUnhappy>
+	<Default_Unhappy_inWater>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehViewEvent viewKey="Neg_2">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalUnhappy" priority="-1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehRandomSet>
+				<randomSets>
+					<DefaultStand weight="90" />
+					<Default_inWater_Unhappy weight="10" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Default_Unhappy_inWater>
+	<Default_VeryUnhappy_inWater>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehViewEvent viewKey="Neg_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalVeryUnhappy" priority="2" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehRandomSet>
+				<randomSets>
+					<DefaultStand weight="80" />
+					<Default_inWater_Unhappy weight="20" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Default_VeryUnhappy_inWater>
+	<DefaultStand>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Standing" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="Stand_Idle" />
+		</behaviors>
+	</DefaultStand>
+	<DefaultLie>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:LyingDown" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="Sit_Idle" />
+		</behaviors>
+	</DefaultLie>
+	<DefaultPerch>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Perching" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="Perch_Idle" />
+		</behaviors>
+	</DefaultPerch>
+	<DefaultTailSpread>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:FanningTail" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="StandTailSpread_Idle" />
+		</behaviors>
+	</DefaultTailSpread>
+	<DefaultHappy>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Wandering" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehWander avoidWater="true" locoSpeed="medium" maxPlayTime="15" minPlayTime="7" />
+			<BFBehSetAttribute>
+				<BFAITargetData exercise="-10" />
+			</BFBehSetAttribute>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTEmoticonInfo emoticonName="EmoteAnimalExerciseGood" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+		</behaviors>
+	</DefaultHappy>
+	<Default_inWater_Happy>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Drinking" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="Drink" />
+			<BFBehSetAttribute>
+				<BFAISubjectData thirst="-1" />
+			</BFBehSetAttribute>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTEmoticonInfo emoticonName="EmoteAnimalThirstGood" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+		</behaviors>
+	</Default_inWater_Happy>
+	<DefaultUnhappy>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:BeingNervous" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="LookNervous" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTEmoticonInfo emoticonName="EmoteAngry" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+		</behaviors>
+	</DefaultUnhappy>
+	<Default_inWater_Unhappy>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:BeingNervous" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="LookNervous" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTEmoticonInfo emoticonName="EmoteAngry" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+		</behaviors>
+	</Default_inWater_Unhappy>
+	<Idle>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimSwitchSet>
+				<behaviorTable>
+					<Stand behSet="DefaultStand" />
+					<Lie behSet="DefaultLie" />
+					<Perch behSet="DefaultPerch" />
+					<TailSpread behSet="DefaultTailSpread" />
+					<default behSet="DefaultStand" />
+				</behaviorTable>
+			</BFBehAnimSwitchSet>
+		</behaviors>
+	</Idle>
+	<WanderHop>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehWander avoidEntityRadius="4" avoidWater="true" locoSpeed="hop" maxPlayTime="0.5" minPlayTime="0.25">
+				<avoidEntityTypes>
+					<b_XLargePredator />
+					<b_LargePredator />
+					<b_MediumPredator />
+					<b_SmallPredator />
+				</avoidEntityTypes>
+			</BFBehWander>
+			<BFBehRandomSet maxPlays="3" minPlays="1">
+				<randomSets>
+					<Stand_Idle weight="50" />
+					<Stand_Nervous weight="50" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</WanderHop>
+	<Stand_Idle>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Idle" />
+		</behaviors>
+	</Stand_Idle>
+	<Stand_Nervous>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Nervous" />
+		</behaviors>
+	</Stand_Nervous>
+	<Think>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimSwitchSet loopFlag="true">
+				<behaviorTable>
+					<Stand behSet="Idle" />
+					<default behSet="Idle" />
+				</behaviorTable>
+			</BFBehAnimSwitchSet>
+		</behaviors>
+	</Think>
+	<LookAt>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehRandomSet>
+				<randomSets>
+					<Idle weight="50" />
+					<Investigate weight="50" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</LookAt>
+	<Investigate>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToLookAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehDockRadial subjectNode="Node_Mouth" targetRadius="3" />
+			<ZTBehViewEvent viewKey="Pos_2" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:LookAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehFaceTarget />
+			<BFBehPlaySet behSet="Idle" />
+		</behaviors>
+	</Investigate>
+	<InvestigateLarge>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToLookAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehMove closestApproach="true" pathRadius="10" />
+			<ZTBehViewEvent viewKey="Pos_2" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:LookAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehFaceTarget />
+			<BFBehPlaySet behSet="Idle" />
+		</behaviors>
+	</InvestigateLarge>
+	<Die_OldAge>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Dying" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="Sit" />
+			<ZTBehViewEvent viewKey="Neg_10">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDiedBad" priority="-1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTMessageInfo global="true" locID="zoomessages:AnimalDied" priority="-1" timeout="60" useEntityName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehKill fadeOutPeriod="1" killSubject="true" />
+		</behaviors>
+	</Die_OldAge>
+	<Die_Sick>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Dying_Sick" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPlaySet behSet="SleepGround" />
+			<ZTBehViewEvent viewKey="Neg_10">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalDiedSickBad" priority="-1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTMessageInfo global="true" locID="zoomessages:AnimalDiedSick" priority="-1" timeout="60" useEntityName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehKill fadeOutPeriod="1" killSubject="true" />
+		</behaviors>
+	</Die_Sick>
+	<Die_Fight>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehMorph NameIt="true" morphEntity="subject" morphTargetEntityType="Carcass_Meat" />
+		</behaviors>
+	</Die_Fight>
+	<Die_Drown>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehKill fadeOutPeriod="1" killSubject="true" />
+		</behaviors>
+	</Die_Drown>
+	<Stand>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Idle" />
+		</behaviors>
+	</Stand>
+	<Lie>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Lie_Idle" />
+		</behaviors>
+	</Lie>
+	<EnterPerch1>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToUse" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehDockTAP subjectNode="Floor" targetAnim="Stand_2Fly" targetTAP="Peafowl_EnterA" />
+			<BFBehAnimateTAP exitTAP="false" subjectNode="Floor" targetTAP="Peafowl_EnterA" />
+		</behaviors>
+	</EnterPerch1>
+	<EnterPerch2>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToUse" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehDockTAP subjectNode="Floor" targetAnim="Stand_2Fly" targetTAP="Peafowl_EnterB" />
+			<BFBehAnimateTAP exitTAP="false" subjectNode="Floor" targetTAP="Peafowl_EnterB" />
+		</behaviors>
+	</EnterPerch2>
+	<PerchLayEgg>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToLayEgg" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="Perch_Idle" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:LayingEgg" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehRandomSet maxPlays="3" minPlays="2">
+				<randomSets>
+					<SpawnEgg weight="100" />
+				</randomSets>
+			</BFBehRandomSet>
+			<BFBehAnimate playTime="10" targetAnim="Perch_Idle" />
+		</behaviors>
+	</PerchLayEgg>
+	<Perch>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Perching" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehRandomSet maxPlays="8" minPlays="5">
+				<randomSets>
+					<Perch_Idle weight="50" />
+					<Perch_ContactCall weight="50" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Perch>
+	<Perch_Groom>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:PreeningFeathers" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehRandomSet maxPlays="8" minPlays="5">
+				<randomSets>
+					<Perch_Idle weight="20" />
+					<Preen weight="80" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</Perch_Groom>
+	<Perch_Idle>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate playTime="4" targetAnim="Perch_Idle" />
+		</behaviors>
+	</Perch_Idle>
+	<Perch_ContactCall>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAt" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_3">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="1" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehAnimate targetAnim="Perch_Call" />
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken ChanceInRadius="70" GiveTo="Akikiki" Name="t_Call" Radius="25" Reconsider="true" Timeout="30" />
+				</BFAITokenList>
+			</BFBehSendToken>
+		</behaviors>
+	</Perch_ContactCall>
+	<Perch_AlarmCall>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Perch_Call" />
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken ChanceInRadius="90" GiveTo="Akikiki" Name="t_Call" OnlyOne="true" Radius="35" Reconsider="true" Timeout="30" />
+				</BFAITokenList>
+			</BFBehSendToken>
+		</behaviors>
+	</Perch_AlarmCall>
+	<ExitPerch1>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:ClimbingDown" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimateTAP exitTAP="true" subjectNode="Floor" targetTAP="Peafowl_ExitA" />
+		</behaviors>
+	</ExitPerch1>
+	<ExitPerch2>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:ClimbingDown" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimateTAP exitTAP="true" subjectNode="Floor" targetTAP="Peafowl_ExitB" />
+		</behaviors>
+	</ExitPerch2>
+	<Preen>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimateRandom>
+				<randomAnims>
+					<Perch_CleanWingL weight="50" />
+					<Perch_CleanWingR weight="50" />
+				</randomAnims>
+			</BFBehAnimateRandom>
+		</behaviors>
+	</Preen>
+	<Sleep_Idle>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Sit_Idle" />
+		</behaviors>
+	</Sleep_Idle>
+	<DryWings>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimateRandom>
+				<randomAnims>
+					<Stand_CleanWingL weight="50" />
+					<Stand_CleanWingR weight="50" />
+				</randomAnims>
+			</BFBehAnimateRandom>
+		</behaviors>
+	</DryWings>
+	<LookLeftRight>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Nervous" />
+		</behaviors>
+	</LookLeftRight>
+	<Groom>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimateRandom>
+				<randomAnims>
+					<Stand_CleanWingL weight="50" />
+					<Stand_CleanWingR weight="50" />
+				</randomAnims>
+			</BFBehAnimateRandom>
+		</behaviors>
+	</Groom>
+	<Fly>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Fly_Ahead" />
+		</behaviors>
+	</Fly>
+	<Poop>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehSpawn spawnEntity="BirdShit" subjectNode="Poop" targetAnim="Stand_Poop" />
+		</behaviors>
+	</Poop>
+	<Poop_Sick>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehSpawn spawnEntity="BirdShit" subjectNode="Poop" targetAnim="Stand_Poop" />
+		</behaviors>
+	</Poop_Sick>
+	<Eat>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Eat" />
+		</behaviors>
+	</Eat>
+	<EatTear>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_EatTear" />
+			<BFBehAnimate targetAnim="Stand_EatTear" />
+		</behaviors>
+	</EatTear>
+	<PeckGround>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:PeckingGround" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="Stand_Eat" />
+			<BFBehAnimate targetAnim="Stand_Eat" />
+		</behaviors>
+	</PeckGround>
+	<EnterFoodDish>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehDock subjectNode="Node_Mouth" targetAnim="Stand_Idle" />
+		</behaviors>
+	</EnterFoodDish>
+	<EnterHollowLogLeft>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehDock subjectNode="Node_Mouth" targetAnim="Stand_Idle" />
+		</behaviors>
+	</EnterHollowLogLeft>
+	<EnterHollowLogRight>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehDock subjectNode="Node_Mouth" targetAnim="Stand_Idle" />
+		</behaviors>
+	</EnterHollowLogRight>
+	<EnterHollowLogMiddle>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehDock subjectNode="Node_Mouth" targetAnim="Stand_Idle" />
+		</behaviors>
+	</EnterHollowLogMiddle>
+	<UseFoodDish>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Eat" />
+		</behaviors>
+	</UseFoodDish>
+	<DrinkFoodDish>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Drink" />
+		</behaviors>
+	</DrinkFoodDish>
+	<ExitFoodDish>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_TurnLeft90" />
+			<BFBehAnimate targetAnim="Stand_TurnLeft90" />
+		</behaviors>
+	</ExitFoodDish>
+	<Drink>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Drink" />
+		</behaviors>
+	</Drink>
+	<Sleep>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:RestingShelter" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate playTime="20" targetAnim="Perch_Idle" />
+		</behaviors>
+	</Sleep>
+	<SleepGround>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate playTime="20" targetAnim="Sit_Idle" />
+		</behaviors>
+	</SleepGround>
+	<Sit>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Sit_Idle" />
+		</behaviors>
+	</Sit>
+	<TailSpread>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<BFBehRandomSet>
+				<randomSets>
+					<TailSpread_Idle weight="50" />
+					<StandTailSpread_Shake weight="50" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</TailSpread>
+	<TailSpread_Idle>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="StandTailSpread_Idle" />
+		</behaviors>
+	</TailSpread_Idle>
+	<StandTailSpread_Shake>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="StandTailSpread_Shake" />
+		</behaviors>
+	</StandTailSpread_Shake>
+	<StandTailSpread_Call>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="StandTailSpread_MatingCall" />
+		</behaviors>
+	</StandTailSpread_Call>
+	<TailSpread_Shake>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="StandTailSpread_Idle" />
+			<BFBehAnimate targetAnim="StandTailSpread_AboutFace" />
+			<BFBehAnimate targetAnim="StandTailSpread_Shake" />
+			<BFBehAnimate targetAnim="StandTailSpread_AboutFace" />
+			<BFBehAnimate targetAnim="StandTailSpread_MatingCall" />
+		</behaviors>
+	</TailSpread_Shake>
+	<FailureSet>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Stotting" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="Stand_AlarmCall" />
+		</behaviors>
+	</FailureSet>
+	<AlarmCall>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Call" />
+		</behaviors>
+	</AlarmCall>
+	<Call>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Call" />
+		</behaviors>
+	</Call>
+	<DustBathe>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Sit_Idle" />
+		</behaviors>
+	</DustBathe>
+	<FeedYoung>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Call" />
+		</behaviors>
+	</FeedYoung>
+	<LookNervous>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Nervous" />
+		</behaviors>
+	</LookNervous>
+	<Attack>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Call" />
+		</behaviors>
+	</Attack>
+	<DockAttacked>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehScript context="behavior" file="scripts/playparticle.lua" function="playParticle" params="{Floor} runps PlacementCloud" />
+			<BFBehDockNow reserveSlotName="general" subjectNode="p_PreyOffset" targetNode="p_PredatorOffset" />
+		</behaviors>
+	</DockAttacked>
+	<Attacked>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Sit_Idle" />
+			<BFBehPlaySet behSet="Die_Fight" />
+		</behaviors>
+	</Attacked>
+	<Fight>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Attack" />
+		</behaviors>
+	</Fight>
+	<AttackedHurt>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_2Lie_Attacked" />
+			<BFBehAnimate targetAnim="Lie_Idle" />
+			<ZTBehViewEvent viewKey="Neg_7">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalHurtBad" priority="-1" timeout="60" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehSetAttribute>
+				<BFAISubjectData health="30" />
+			</BFBehSetAttribute>
+		</behaviors>
+	</AttackedHurt>
+	<DefendEqual>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<BFBehRandomSet>
+				<randomSets>
+					<Attacked weight="50" />
+					<AttackedHurt weight="50" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</DefendEqual>
+	<DockFight>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToFight" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPursuit hitRadius="3" locoSpeed="fast" pollFreq="0.1" pursuitRadius="20" />
+			<BFBehDockNow redock="true" reserveSlotName="general" subjectNode="p_FightOffset" targetNode="p_FightOffset" />
+		</behaviors>
+	</DockFight>
+	<DockFight2>
+		<subjects>
+			<Akikiki_Adult_M />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToFight" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehPursuit hitRadius="3" locoSpeed="fast" pollFreq="0.1" pursuitRadius="20" />
+			<BFBehAnimate loopFlag="true" targetAnim="Stand_Idle" />
+		</behaviors>
+	</DockFight2>
+	<FightSnap>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate interruptFlag="true" targetAnim="Stand_Idle" />
+		</behaviors>
+	</FightSnap>
+	<Stand_Angry>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="TailSpread_Idle" />
+			<BFBehAnimateRandom>
+				<randomAnims>
+					<TailSpread_Idle weight="75" />
+					<TailSpread_Call weight="25" />
+				</randomAnims>
+			</BFBehAnimateRandom>
+		</behaviors>
+	</Stand_Angry>
+	<Sick>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Idle" />
+		</behaviors>
+	</Sick>
+	<VerySick>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Sit_Idle" />
+		</behaviors>
+	</VerySick>
+	<BuildNest>
+		<subjects>
+			<Akikiki_Adult_F />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Eat" />
+			<BFBehAnimate targetAnim="Stand_Nervous" />
+			<BFBehAnimate targetAnim="Stand_Eat" />
+			<BFBehSpawn fadeInPeriod="1" randomPosOffset="0" spawnEntity="BirdNestGroundTiny_Shelter" subjectNode="Floor" />
+			<BFBehAnimate targetAnim="Stand_Eat" />
+		</behaviors>
+	</BuildNest>
+	<LayEgg>
+		<subjects>
+			<Akikiki_Adult_F />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Eat" />
+			<BFBehAnimate targetAnim="Stand_Nervous" />
+			<BFBehAnimate targetAnim="Stand_Eat" />
+			<BFBehSpawn fadeInPeriod="1" randomPosOffset="0" spawnEntity="BirdNestGroundTiny_Shelter" subjectNode="Floor" />
+			<BFBehRandomSet maxPlays="4" minPlays="2">
+				<randomSets>
+					<SpawnEgg weight="100" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</LayEgg>
+	<SpawnEgg>
+		<subjects>
+			<Akikiki_Adult_F />
+		</subjects>
+		<behaviors>
+			<BFBehSpawn fadeInPeriod="1" randomPosOffset="0.1" spawnEntity="Akikiki_Egg" spawnInTA="true" spawnRelation="child" subjectNode="Floor" />
+			<BFBehScript context="behavior" file="scripts/justgavebirth.lua" function="justgavebirth" />
+		</behaviors>
+	</SpawnEgg>
+	<HatchEgg>
+		<subjects>
+			<Akikiki_Egg />
+		</subjects>
+		<behaviors>
+			<BFBehRandomSet maxPlays="1" minPlays="1">
+				<randomSets>
+					<SpawnF weight="2" />
+					<SpawnM weight="2" />
+					<SpawnDead weight="1" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</HatchEgg>
+	<IdleEgg>
+		<subjects>
+			<Akikiki_Egg />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Idle" />
+		</behaviors>
+	</IdleEgg>
+	<SpawnF>
+		<subjects>
+			<Akikiki_Egg />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Hatch_Idle" />
+			<ZTBehMorph morphEntity="Akikiki_Egg" morphPeriod="2" morphTargetEntityType="Akikiki_Young_F" />
+			<BFBehKill killSubject="true" />
+		</behaviors>
+	</SpawnF>
+	<SpawnM>
+		<subjects>
+			<Akikiki_Egg />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Hatch_Idle" />
+			<ZTBehMorph morphEntity="Akikiki_Egg" morphPeriod="2" morphTargetEntityType="Akikiki_Young_M" />
+			<BFBehKill killSubject="true" />
+		</behaviors>
+	</SpawnM>
+	<SpawnDead>
+		<subjects>
+			<Akikiki_Egg />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Hatch_Idle" />
+			<BFBehKill killSubject="true" />
+		</behaviors>
+	</SpawnDead>
+	<WaitAttackGuest>
+		<subjects>
+			<Akikiki_Adult />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate loopFlag="true" targetAnim="Stand_Idle" />
+		</behaviors>
+	</WaitAttackGuest>
+	<AttackGuest>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_AttackGuest" />
+		</behaviors>
+	</AttackGuest>
+	<Rest>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate playTime="10" targetAnim="Sit_Idle" />
+		</behaviors>
+	</Rest>
+	<ThrashWater>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate interruptFlag="true" targetAnim="Drown_Idle" />
+		</behaviors>
+	</ThrashWater>
+	<EnterIceBlock>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehDock subjectNode="Node_Mouth" targetAnim="Stand_Idle" />
+		</behaviors>
+	</EnterIceBlock>
+	<UseIceBlock>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_Eat" />
+		</behaviors>
+	</UseIceBlock>
+	<ExitIceBlock>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_TurnLeft90" />
+			<BFBehAnimate targetAnim="Stand_TurnLeft90" />
+		</behaviors>
+	</ExitIceBlock>
+	<Roar>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:AlarmCall" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="Stand_AlarmCall" />
+		</behaviors>
+	</Roar>
+	<InterspeciesTerritorialCall>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:CallAt" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<ZTBehViewEvent viewKey="Pos_4">
+				<ZTFeedbackData>
+					<ZTThoughtInfo global="false" locID="guestthoughts:AnimalCallGood" priority="0" timeout="60" useTargetName="true" useTargetTarget="true" />
+				</ZTFeedbackData>
+			</ZTBehViewEvent>
+			<BFBehPlaySet behSet="Roar" />
+		</behaviors>
+	</InterspeciesTerritorialCall>
+	<Turn180>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate targetAnim="Stand_TurnLeft90" />
+			<BFBehAnimate targetAnim="Stand_TurnLeft90" />
+		</behaviors>
+	</Turn180>
+	<LoopIdle>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimSwitchSet loopFlag="true">
+				<behaviorTable>
+					<Stand behSet="LoopStand" />
+					<Lie behSet="LoopLie" />
+					<Sit behSet="LoopSit" />
+					<Sleep behSet="LoopSleep" />
+					<default behSet="LoopStand" />
+				</behaviorTable>
+			</BFBehAnimSwitchSet>
+		</behaviors>
+	</LoopIdle>
+	<LoopStand>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate loopFlag="true" targetAnim="Stand_Idle" />
+		</behaviors>
+	</LoopStand>
+	<LoopLie>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate loopFlag="true" targetAnim="Lie_Idle" />
+		</behaviors>
+	</LoopLie>
+	<LoopSit>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate loopFlag="true" targetAnim="Sit_Idle" />
+		</behaviors>
+	</LoopSit>
+	<LoopSleep>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehAnimate loopFlag="true" targetAnim="Sit_Idle" />
+		</behaviors>
+	</LoopSleep>
+	<MatePerhaps>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<BFBehRandomSet>
+				<randomSets>
+					<MateYes weight="1" />
+					<MateNo weight="1" />
+				</randomSets>
+			</BFBehRandomSet>
+		</behaviors>
+	</MatePerhaps>
+	<MateYes>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Impressed" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehSendToken>
+				<BFAITokenList>
+					<BFAIToken GiveTo="target" Name="t_Reproduce" Payload="subject" Reconsider="true" Timeout="-1" />
+				</BFAITokenList>
+			</BFBehSendToken>
+			<BFBehAnimate loopFlag="true" targetAnim="Sit_Idle" />
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToMate" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+		</behaviors>
+	</MateYes>
+	<MateNo>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:NotImpressed" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehEvasion avoidWater="true" evasionRadius="10" locoSpeed="medium" />
+		</behaviors>
+	</MateNo>
+	<DockMateM>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:GoingToMate" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehDock locoSpeed="medium" subjectNode="Node_Mouth" targetAnim="Sit_Idle" targetNode="MateF" />
+		</behaviors>
+	</DockMateM>
+	<WaitMateF>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:WaitMate" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate loopFlag="true" targetAnim="Sit_Idle" />
+		</behaviors>
+	</WaitMateF>
+	<MateF>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Mating" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate loopFlag="true" targetAnim="Sit_Idle" />
+		</behaviors>
+	</MateF>
+	<MateM>
+		<subjects>
+			<Akikiki />
+		</subjects>
+		<behaviors>
+			<ZTBehFeedback>
+				<ZTFeedbackData>
+					<ZTActionInfo locID="animalactions:Mating" useTargetName="true" />
+				</ZTFeedbackData>
+			</ZTBehFeedback>
+			<BFBehAnimate targetAnim="Mate_Idle" />
+		</behaviors>
+	</MateM>
+</BehaviorSets>

@@ -1,0 +1,27 @@
+<BFTypedBinder binderType="Palila_Juvenile_M">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Palila>
+									<Palila_Juvenile>
+										<Palila_Juvenile_M />
+									</Palila_Juvenile>
+								</Palila>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<BFAIEntityDataShared b_Male="1" />
+	</shared>
+</BFTypedBinder>

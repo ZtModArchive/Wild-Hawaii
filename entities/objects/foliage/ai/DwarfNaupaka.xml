@@ -1,0 +1,69 @@
+<BFTypedBinder binderType="DwarfNaupaka">
+	<types>
+		<entity>
+			<foliage>
+				<plant>
+					<grass>
+						<DwarfNaupaka />
+					</grass>
+				</plant>
+			</foliage>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity entityVersion="1" />
+	</instance>
+	<shared>
+		<ZTPlacementData icon3Doffset="0 0 0.73" icon3Dscale=".43" />
+		<UIToggleButton template="adopt">
+			<UIAspect>
+				<default image="entities\objects\foliage\DwarfNaupaka\DwarfNaupaka_icon.dds" />
+			</UIAspect>
+			<UIHelpInfo name="" short="" long="" help="" ids="entityname:DwarfNaupaka" />
+			<on>
+				<event msg="ZT_SETPLACEMENTOBJECT" data="BFString" string="DwarfNaupaka" />
+			</on>
+		</UIToggleButton>
+		<BFGBiomeData location="coastal_hawaii">
+			<tropicaldryforest />
+		</BFGBiomeData>
+		<BFAIEntityDataShared b_GrazeGrass="true"  s_prop="Grass_Prop" s_Endangerment="Endangered" s_Zoopedia="zoopedia:zoopedia_wcfoliage:entry" f_FameReq="20" b_ProvidesCover="true" b_ProvidesLargeCover="true"/>
+		<ZTTourData>
+			<biome_borealforest value="3"/>
+	 		<biome_temperateforestforest value="3"/>
+		</ZTTourData>
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					<BFSceneGraphComponent modelfile="entities\objects\foliage\DwarfNaupaka\DwarfNaupaka.nif" scale="0.65" />
+				        <BFMultiGroundFitComponent heightOffset="0"/>
+            </BFPhysObj>
+         </instance>
+			<shared>
+				<BFSharedRandomTextureInfo>
+					<replacementSet>
+						<group weight="1">
+							<item material="DwarfNaupaka" image="entities/objects/foliage/DwarfNaupaka/DwarfNaupaka.dds" layer="base" />
+						</group>
+						<group weight="1">
+							<item material="DwarfNaupaka" image="entities/objects/foliage/DwarfNaupaka/DwarfNaupaka_1.dds" layer="base" />
+						</group>
+						<group weight="1">
+							<item material="DwarfNaupaka" image="entities/objects/foliage/DwarfNaupaka/DwarfNaupaka_2.dds" layer="base" />
+						</group>
+					</replacementSet>
+				</BFSharedRandomTextureInfo>
+			</shared>
+      </BFNamedBinder>
+      <BFBinder>
+         <instance>
+				<ZTEconomyComponent cost="10">
+					<ZTTransaction name="build" costType="parent" type="debit" category="construction" />
+					<ZTTransaction name="destroy" cost="80" costType="%parent" type="credit" category="recycling" />
+				</ZTEconomyComponent>
+			</instance>
+		</BFBinder>
+	</binder>
+</BFTypedBinder>

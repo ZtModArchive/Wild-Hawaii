@@ -1,0 +1,128 @@
+<BFTypedBinder abstract="true" binderType="Alala_Young">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Alala>
+									<Alala_Young />
+								</Alala>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity entityVersion="1">
+			<physObjParenting>
+				<parentObj attachnode="link" child="shadowObj" parent="mainObj" postype="ignore" rottype="use" />
+			</physObjParenting>
+		</BFGEntity>
+	</instance>
+	<shared>
+		<UIToggleButton template="adopt">
+			<on>
+				<event data="BFString" msg="ZT_SETPLACEMENTOBJECT" string="Alala_Young_M" />
+			</on>
+		</UIToggleButton>
+		<ZTDevComponent />
+		<BFAIEntityDataShared b_Adult="0" b_Aerial="false" b_ElevatedNestBoxUser="false" b_PerchesLookoutPost="false" b_Prey="true" f_MorphMessageDuration="30" f_MorphMessagePriority="1" f_viewBonus="5" p_PreyOffset="0 1 0" s_MorphMessage="zoomessages:AnimalHatchEgg">
+			<BFAINeedAdjusts exercise="0.33" health="0.25" reproduction="0" stimulation="0.33" />
+		</BFAIEntityDataShared>
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					<BFActorComponent actorfile="entities/units/animals/Alala/Alala_Young_F.bfm" scale="1.0" />
+				</BFPhysObj>
+			</instance>
+			<shared>
+				<BFSharedRandomTextureInfo>
+					<replacementSet>
+						<group weight="1">
+							<item image="entities/units/animals/Alala/Alala_Young_F.dds" material="Alala_Young_F" />
+						</group>
+					</replacementSet>
+				</BFSharedRandomTextureInfo>
+			</shared>
+		</BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFLocomotionMgr />
+			</instance>
+			<binder>
+				<BFNamedBinder binderName="ground" required="1">
+					<instance>
+						<BFLocoAnimate version="1">
+							<stop maxAnimSpeed="3" minAnimSpeed="2" name="Stand" />
+							<slow maxAnimSpeed="3" minAnimSpeed="2" name="Walk" />
+							<medium maxAnimSpeed="3.5" minAnimSpeed="2.5" name="Walk" />
+							<fast maxAnimSpeed="3.5" minAnimSpeed="2.5" name="Hop" />
+							<fly maxAnimSpeed="3.5" minAnimSpeed="2.5" name="Hop" />
+							<hop maxAnimSpeed="3.5" minAnimSpeed="2.5" name="Hop" />
+							<evade maxAnimSpeed="3.5" minAnimSpeed="2.5" name="Hop" />
+						</BFLocoAnimate>
+					</instance>
+				</BFNamedBinder>
+			</binder>
+		</BFBinder>
+		<BFNamedBinder binderName="shadowObj">
+			<instance>
+				<BFPhysObj>
+					<BFMovingBlobShadowComponent baseNode="Bip01 Spine" intensity="0.3" shadowTexture="world\shadows\blob\round_blob3.tga" width="0.5" />
+				</BFPhysObj>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFGCollisionTester escapeBuffer="0.0625" maxSlope=".9" motionClass="mover" radius=".125" wadeDepth="2" waterScore="10" />
+			</instance>
+		</BFBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFAICognitiveMgr>
+					<Sensors>
+						<ZTAISensor />
+						<BFAISensorSelf />
+						<ZTAISensorLand />
+						<ZTAISensorTA sensorTag="habitat" />
+					</Sensors>
+					<StateThinkers>
+						<ZTAIStateThinker mergeKey="Name">
+							<BFAIStateVar Advanced="true" CessationThreshold="90" CriticalThreshold="90" Name="reproduction" TriggerThreshold="90" Value="" ValueMax="0" ValueMin="0" />
+						</ZTAIStateThinker>
+					</StateThinkers>
+					<TaskThinkers>
+						<ZTAITaskThinker />
+					</TaskThinkers>
+				</BFAICognitiveMgr>
+			</instance>
+			<shared>
+				<BFAICogShared>
+					<BFAINoPerceive>
+						<fence />
+						<path />
+						<entrance />
+					</BFAINoPerceive>
+				</BFAICogShared>
+			</shared>
+		</BFBinder>
+		<BFNamedBinder binderName="checkup" required="1">
+			<instance>
+				<ZTAIStaffRequestController attribName="health" cancelTestType="1" cancelThresholdValue="20" testType="4" thresholdValue="30">
+					<ZTStaffRequestData priority="5" subjectType="Keeper" tokenKey="t_CheckupBaby" />
+				</ZTAIStaffRequestController>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFAIEntityDataInstance f_needPointsGood="50" />
+			</instance>
+		</BFBinder>
+	</binder>
+</BFTypedBinder>

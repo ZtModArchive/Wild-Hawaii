@@ -1,0 +1,31 @@
+﻿<ZT2Strings>
+   <!--entity names-->
+   <entityname>
+      <!--scenery object names-->
+      <ohialehua>'Ohi'a Lehua</ohialehua>
+      <ohialehua_stt>'Ohi'a Lehua</ohialehua_stt>
+      <ohialehua_lower>'Ohi'a Lehua</ohialehua_lower>
+      <ohialehua_ltt>
+         <color r="255" g="248" b="178">
+            <b>'Ohi'a Lehua</b>
+         </color>
+         <br/>
+        Click to plant a 'Ohi'a Lehua, a native flowering tree to several Hawaiian Islands.
+      </ohialehua_ltt>
+   </entityname>
+      <LOC_STRING _locID="zoopedia_ohialehua:entry">'Ohi'a Lehua</LOC_STRING>
+      <LOC_STRING _locID="zoopedia_ohialehua:text">
+         <cell pady="0" width="1000"/>
+         <p/>
+         <cell width="260"/>
+         <cell width="640" height="320" bgimg="ui/zoopedia/topCellBg.dds">
+            <cell width="600" padx="20" pady="20">
+               <color r="255" g="255" b="255">
+                  <img src="entities/objects/foliage/ohialehua/ohialehua_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+                  <p/>Árbol grande del grupo de los Ficus epífitos, alcanzando 30-40 m (raramente 60 m) de altura, con un tronco macizo irregular, de 2 m de diámetro, que desarrolla raíces aéreas y contrafuertes para anclarlo al suelo y ayudar a soportar las pesadas ramas casi horizontales.
+                  <p/>
+               </color>
+            </cell>
+         </cell>
+      </LOC_STRING>
+</ZT2Strings>

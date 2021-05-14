@@ -1,0 +1,46 @@
+<BFTypedBinder binderType="Iiwi_Adult_F">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Iiwi>
+									<Iiwi_Adult>
+										<Iiwi_Adult_F />
+									</Iiwi_Adult>
+								</Iiwi>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<UIToggleButton template="adopt">
+			<on>
+				<event data="BFString" msg="ZT_SETPLACEMENTOBJECT" string="Iiwi_Adult_F" />
+			</on>
+		</UIToggleButton>
+		<BFAIEntityDataShared b_Male="0" f_adoptCount="rand(1,4)" />
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					<BFActorComponent actorfile="entities/units/animals/Iiwi/Iiwi_Adult_F.bfm" scale="0.7" />
+				</BFPhysObj>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFAIEntityDataInstance b_Pregnant="false" />
+			</instance>
+		</BFBinder>
+	</binder>
+</BFTypedBinder>

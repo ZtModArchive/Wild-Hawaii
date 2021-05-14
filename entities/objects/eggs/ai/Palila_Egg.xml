@@ -1,0 +1,77 @@
+<BFTypedBinder binderType="Palila_Egg">
+	<types>
+		<entity>
+			<egg>
+				<Palila_Egg />
+			</egg>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<ZTPlacementData icon3Doffset="0 0 0.3" icon3Dscale="5.0" />
+		<UIToggleButton template="adopt">
+			<UIHelpInfo help="" ids="entityname:Palila_Egg" long="" name="" short="" />
+			<on>
+				<event data="BFString" msg="ZT_SETPLACEMENTOBJECT" string="Palila_Egg" />
+			</on>
+		</UIToggleButton>
+		<BFAIEntityDataShared s_Endangerment="LowRisk" s_Product="AD" s_Species="Palila" s_Zoopedia="zoopedia:zoopedia_Palila:entry" />
+		<BFGBiomeData location="temperateforest_northamerica" locationSensitivity="10">
+			<alpine sensitivity="4" />
+			<benthic sensitivity="4" />
+			<borealforest sensitivity="4" />
+			<coastal sensitivity="4" />
+			<desert sensitivity="4" />
+			<grassland sensitivity="4" />
+			<reef sensitivity="4" />
+			<pelagic sensitivity="4" />
+			<temperateforest primary="true" sensitivity="10" />
+			<tropicalrainforest sensitivity="4" />
+			<tundra sensitivity="4" />
+			<savannah sensitivity="4" />
+			<scrub sensitivity="4" />
+			<wetlands sensitivity="4" />
+		</BFGBiomeData>
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					<BFCollisionComponent grid="Bip01" />
+					<BFActorComponent activeSequenceAccumulate="false" activeSequenceName="Stand_Idle" actorfile="entities/objects/eggs/JayEurasian_Egg/JayEurasian_Egg.bfm" scale="0.4" />
+					<BFGroundFitComponent heightOffset="0.0" />
+					<BFGridCollisionComponent />
+				</BFPhysObj>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFAICognitiveMgr>
+					<Sensors>
+						<ZTAISensor />
+						<BFAISensorSelf />
+					</Sensors>
+					<StateThinkers>
+						<ZTAIStateThinker>
+							<BFAIStateVar Advanced="true" CessationThreshold="0" CriticalThreshold="1.06" DisplayThreshold="0" Name="incubation" PressingThreshold="1.00" TriggerThreshold="1.06" Value="" ValueMax="" ValueMin=".0075" />
+						</ZTAIStateThinker>
+					</StateThinkers>
+					<TaskThinkers>
+						<ZTAITaskThinker />
+					</TaskThinkers>
+				</BFAICognitiveMgr>
+			</instance>
+			<shared>
+				<BFAICogShared>
+					<BFAINoPerceive>
+						<fence />
+						<path />
+						<entrance />
+					</BFAINoPerceive>
+				</BFAICogShared>
+			</shared>
+		</BFBinder>
+	</binder>
+</BFTypedBinder>

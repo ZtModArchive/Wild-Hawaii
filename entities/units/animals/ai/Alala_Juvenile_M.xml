@@ -1,0 +1,27 @@
+<BFTypedBinder binderType="Alala_Juvenile_M">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Alala>
+									<Alala_Juvenile>
+										<Alala_Juvenile_M />
+									</Alala_Juvenile>
+								</Alala>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<BFAIEntityDataShared b_Male="1" />
+	</shared>
+</BFTypedBinder>

@@ -1,0 +1,27 @@
+<BFTypedBinder binderType="Akikiki_Young_M">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Akikiki>
+									<Akikiki_Young>
+										<Akikiki_Young_M />
+									</Akikiki_Young>
+								</Akikiki>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<BFAIEntityDataShared b_Male="1" />
+	</shared>
+</BFTypedBinder>

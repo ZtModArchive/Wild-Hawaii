@@ -1,0 +1,46 @@
+<BFTypedBinder binderType="Akikiki_Adult_F">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Akikiki>
+									<Akikiki_Adult>
+										<Akikiki_Adult_F />
+									</Akikiki_Adult>
+								</Akikiki>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<UIToggleButton template="adopt">
+			<on>
+				<event data="BFString" msg="ZT_SETPLACEMENTOBJECT" string="Akikiki_Adult_F" />
+			</on>
+		</UIToggleButton>
+		<BFAIEntityDataShared b_Male="0" f_adoptCount="rand(1,4)" />
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					<BFActorComponent actorfile="entities/units/animals/Akikiki/Akikiki_Adult_F.bfm" scale="0.7" />
+				</BFPhysObj>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFAIEntityDataInstance b_Pregnant="false" />
+			</instance>
+		</BFBinder>
+	</binder>
+</BFTypedBinder>

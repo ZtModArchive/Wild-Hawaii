@@ -1,0 +1,27 @@
+<BFTypedBinder binderType="Akohekohe_Young_M">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Akohekohe>
+									<Akohekohe_Young>
+										<Akohekohe_Young_M />
+									</Akohekohe_Young>
+								</Akohekohe>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<BFAIEntityDataShared b_Male="1" />
+	</shared>
+</BFTypedBinder>

@@ -1,0 +1,124 @@
+<BFTypedBinder binderType="ChickenKauai_Young" abstract="true">
+   <types>
+      <entity>
+         <actor>
+            <animal>
+               <Aves>
+                  <Galliformes>
+                     <Phasianidae>
+                        <ChickenKauai>
+                           <ChickenKauai_Young/>
+                        </ChickenKauai>
+                     </Phasianidae>
+                  </Galliformes>
+               </Aves>
+            </animal>
+         </actor>
+      </entity>
+   </types>
+  <instance>
+      <BFGEntity entityVersion="1">
+         <physObjParenting>
+            <parentObj parent="mainObj" child="shadowObj" rottype="use" postype="ignore" attachnode="link"/>
+         </physObjParenting>
+      </BFGEntity>
+   </instance>
+   <shared>
+      <UIToggleButton template="adopt">
+         <on>
+            <event msg="ZT_SETPLACEMENTOBJECT" data="BFString" string="ChickenKauai_Young_M"/>
+         </on>
+      </UIToggleButton>
+      <ZTDevComponent/>
+      <BFAIEntityDataShared f_viewBonus="5" b_PerchesLookoutPost="false" b_ElevatedNestBoxUser="false" b_Adult="0" p_PreyOffset="0 1 0" b_Prey="true" s_MorphMessage="zoomessages:AnimalHatchEgg" f_MorphMessagePriority="1" f_MorphMessageDuration="30">
+         <BFAINeedAdjusts health="0.25" stimulation="0.33" exercise="0.33" reproduction="0"/>
+      </BFAIEntityDataShared>
+   </shared>
+   <binder>
+      <BFNamedBinder binderName="mainObj">
+         <instance>
+            <BFPhysObj>
+               <BFActorComponent actorfile="entities/units/animals/TragopanTemminck/TragopanTemminck_Young_F.bfm" scale="0.15"/>
+					<BFDecalTextureCycleComponent materialName="TragopanTemminck" textureSet="2">
+					<Step imageName="entities/units/animals/shared/Tragopan_blink_blank.dds" hold="3.0" variance="0.5" />
+					<Step imageName="entities/units/animals/shared/Tragopan_blink02.dds" hold="0.08" variance="" />
+					<Step imageName="entities/units/animals/shared/Tragopan_blink.dds" hold="0.1" variance="" />
+					<Step imageName="entities/units/animals/shared/Tragopan_blink02.dds" hold="0.08" variance="" />
+					</BFDecalTextureCycleComponent>
+            </BFPhysObj>
+         </instance>
+      </BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFLocomotionMgr />
+			</instance>
+			<binder>
+				<BFNamedBinder binderName="ground" required="1">
+					<instance>
+						<BFLocoAnimate version="1">
+							<stop name="Stand" minAnimSpeed="2" maxAnimSpeed="3"  />
+							<slow name="Walk" minAnimSpeed="2" maxAnimSpeed="3"  />
+							<medium name="Walk" minAnimSpeed="2.5" maxAnimSpeed="3.5"  />
+							<fast name="Run" minAnimSpeed="2.5" maxAnimSpeed="3.5"  />
+							<fly name="Run" minAnimSpeed="2.5" maxAnimSpeed="3.5"  />
+							<evade name="Run" minAnimSpeed="2.5" maxAnimSpeed="3.5"  />
+						</BFLocoAnimate>
+					</instance>
+				</BFNamedBinder>
+			</binder>
+		</BFBinder>
+      <BFNamedBinder binderName="shadowObj">
+         <instance>
+            <BFPhysObj>
+               <BFMovingBlobShadowComponent shadowTexture="world\shadows\blob\round_blob3.tga" baseNode="Bip01 Spine" width="0.5" intensity="0.3"/>
+            </BFPhysObj>
+         </instance>
+      </BFNamedBinder>
+      <BFBinder required="1">
+         <instance>
+            <BFGCollisionTester escapeBuffer="0.0625" radius=".125" waterScore="10" motionClass="mover" maxSlope=".9" wadeDepth="2"/>
+         </instance>
+      </BFBinder>
+      <BFBinder required="1">
+         <instance>
+            <BFAICognitiveMgr>
+               <Sensors>
+                  <ZTAISensor/>
+                  <BFAISensorSelf/>
+                  <ZTAISensorLand/>
+                  <ZTAISensorTA sensorTag="habitat"/>
+               </Sensors>
+               <StateThinkers>
+                  <ZTAIStateThinker mergeKey="Name">
+                     <BFAIStateVar Name="reproduction" Value="" ValueMin="0" ValueMax="0" CessationThreshold="90" TriggerThreshold="90" CriticalThreshold="90" Advanced="true"/>
+                  </ZTAIStateThinker>
+               </StateThinkers>
+               <TaskThinkers>
+                  <ZTAITaskThinker/>
+               </TaskThinkers>
+            </BFAICognitiveMgr>
+         </instance>
+         <shared>
+            <BFAICogShared>
+               <BFAINoPerceive>
+                  <fence/>
+                  <path/>
+                  <entrance/>
+               </BFAINoPerceive>
+            </BFAICogShared>
+         </shared>
+      </BFBinder>
+      <BFNamedBinder binderName="checkup" required="1">
+         <instance>
+            <ZTAIStaffRequestController attribName="health" thresholdValue="30" testType="4" cancelThresholdValue="20" cancelTestType="1">
+               <ZTStaffRequestData tokenKey="t_CheckupBaby" subjectType="Keeper" priority="5"/>
+            </ZTAIStaffRequestController>
+         </instance>
+      </BFNamedBinder>
+      <BFBinder required="1">
+         <instance>
+            <BFAIEntityDataInstance f_needPointsGood="50"/>
+         </instance>
+      </BFBinder>
+   </binder>
+</BFTypedBinder>

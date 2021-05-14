@@ -1,0 +1,154 @@
+﻿<ZT2Strings>
+      <LOC_STRING _locID="entityname:Rhododendron">Rhododendron</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rhododendron_stt">Rhododendron</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rhododendron_lower">den Rhododendron</LOC_STRING>
+      <LOC_STRING _locID="entityname:Rhododendron_ltt">
+         <color r="255" g="248" b="178">
+            <b>Rhododendron</b>
+         </color>
+         <br/>Klicken Sie hier, um einen Rhododendron auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:Koa">Koa Tree</LOC_STRING>
+      <LOC_STRING _locID="entityname:Koa_stt">Koa Tree</LOC_STRING>
+      <LOC_STRING _locID="entityname:Koa_lower">die Koa Tree</LOC_STRING>
+      <LOC_STRING _locID="entityname:Koa_ltt">
+         <color r="255" g="248" b="178">
+            <b>Koa Tree</b>
+         </color>
+         <br/>Click to Place a Koa Tree, a large acacia native to Hawaii.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:HemlockChinese">Chinesische Hemlocktanne</LOC_STRING>
+      <LOC_STRING _locID="entityname:HemlockChinese_stt">Chinesische Hemlocktanne</LOC_STRING>
+      <LOC_STRING _locID="entityname:HemlockChinese_lower">die chinesische Hemlocktanne</LOC_STRING>
+      <LOC_STRING _locID="entityname:HemlockChinese_ltt">
+         <color r="255" g="248" b="178">
+            <b>Chinesische Hemlocktanne</b>
+         </color>
+         <br/>Klicken Sie hier, um eine chinesische Hemlocktanne auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:CoralberryChinese">Chinesische Schneebeere</LOC_STRING>
+      <LOC_STRING _locID="entityname:CoralberryChinese_stt">Chinesische Schneebeere</LOC_STRING>
+      <LOC_STRING _locID="entityname:CoralberryChinese_lower">die chinesische Schneebeere</LOC_STRING>
+      <LOC_STRING _locID="entityname:CoralberryChinese_ltt">
+         <color r="255" g="248" b="178">
+            <b>Chinesische Schneebeere</b>
+         </color>
+         <br/>Klicken Sie hier, um eine chinesische Schneebeere auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:OrchidChinese">Chinesische Orchidee</LOC_STRING>
+      <LOC_STRING _locID="entityname:OrchidChinese_stt">Chinesische Orchidee</LOC_STRING>
+      <LOC_STRING _locID="entityname:OrchidChinese_lower">die chinesische Orchidee</LOC_STRING>
+      <LOC_STRING _locID="entityname:OrchidChinese_ltt">
+         <color r="255" g="248" b="178">
+            <b>Chinesische Orchidee</b>
+         </color>
+         <br/>Klicken Sie hier, um eine chinesische Orchidee auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:Ginkgo">Ginkgo</LOC_STRING>
+      <LOC_STRING _locID="entityname:Ginkgo_stt">Ginkgo</LOC_STRING>
+      <LOC_STRING _locID="entityname:Ginkgo_lower">den Ginkgo</LOC_STRING>
+      <LOC_STRING _locID="entityname:Ginkgo_ltt">
+         <color r="255" g="248" b="178">
+            <b>Ginkgo</b>
+         </color>
+         <br/>Klicken Sie hier, um einen Ginkgo auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:BambooChinese">Bambus</LOC_STRING>
+      <LOC_STRING _locID="entityname:BambooChinese_stt">Bambus</LOC_STRING>
+      <LOC_STRING _locID="entityname:BambooChinese_lower">den Bambus</LOC_STRING>
+      <LOC_STRING _locID="entityname:BambooChinese_ltt">
+         <color r="255" g="248" b="178">
+            <b>Bambus</b>
+         </color>
+         <br/>Klicken Sie hier, um einen Bambus auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:BambooLarge">Riesenbambus</LOC_STRING>
+      <LOC_STRING _locID="entityname:BambooLarge_stt">Riesenbambus</LOC_STRING>
+      <LOC_STRING _locID="entityname:BambooLarge_lower">den Riesenbambus</LOC_STRING>
+      <LOC_STRING _locID="entityname:BambooLarge_ltt">
+         <color r="255" g="248" b="178">
+            <b>Riesenbambus</b>
+         </color>
+         <br/>Klicken Sie hier, um einen Riesenbambus auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:Chuniophoenix">Hainan-Fächerpalme</LOC_STRING>
+      <LOC_STRING _locID="entityname:Chuniophoenix_stt">Hainan-Fächerpalme</LOC_STRING>
+      <LOC_STRING _locID="entityname:Chuniophoenix_lower">die Hainan-Fächerpalme</LOC_STRING>
+      <LOC_STRING _locID="entityname:Chuniophoenix_ltt">
+         <color r="255" g="248" b="178">
+            <b>Hainan-Fächerpalme</b>
+         </color>
+         <br/>Klicken Sie hier, um eine Hainan-Fächerpalme auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:LizardTailChinese">Chinesischer Molchschwanz</LOC_STRING>
+      <LOC_STRING _locID="entityname:LizardTailChinese_stt">Chinesischer Molchschwanz</LOC_STRING>
+      <LOC_STRING _locID="entityname:LizardTailChinese_lower">den chinesischen Molchschwanz</LOC_STRING>
+      <LOC_STRING _locID="entityname:LizardTailChinese_ltt">
+         <color r="255" g="248" b="178">
+            <b>Chinesischer Molchschwanz</b>
+         </color>
+         <br/>Klicken Sie hier, um einen chinesischen Molchschwanz auszuwählen und zu platzieren.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:">Dwarf Naupaka</LOC_STRING>
+      <LOC_STRING _locID="entityname:DwarfNaupaka_stt">Dwarf Naupaka</LOC_STRING>
+      <LOC_STRING _locID="entityname:DwarfNaupaka_lower">das Dwarf Naupaka</LOC_STRING>
+      <LOC_STRING _locID="entityname:DwarfNaupaka_ltt">
+         <color r="255" g="248" b="178">
+            <b>Dwarf Naupaka</b>
+         </color>
+         <br/>Click to Place some Dwarf Naupaka, an endangered Hawaiian Plant.
+      </LOC_STRING>
+      <LOC_STRING _locID="entityname:SilverSword">Hawaiian Silver Sword</LOC_STRING>
+      <LOC_STRING _locID="entityname:SilverSword_stt">Hawaiian Silver Sword</LOC_STRING>
+      <LOC_STRING _locID="entityname:SilverSword_lower">die Hawaiian Silver Sword</LOC_STRING>
+      <LOC_STRING _locID="entityname:SilverSword_ltt">
+         <color r="255" g="248" b="178">
+            <b>Hawaiian Silver Sword</b>
+         </color>
+         <br/>Click to place the rare Hawaiian Silver Sword.
+      </LOC_STRING>
+      <LOC_STRING _locID="zoopedia_wcfoliage:entry">Pflanzen & Bäume von Wildes China</LOC_STRING>
+      <LOC_STRING _locID="zoopedia_wcfoliage:text">
+         <cell pady="0" width="1000"/>
+         <p/>
+         <cell width="260"/>
+         <cell width="640" height="320" bgimg="ui/zoopedia/topCellBg.dds">
+            <cell width="600" padx="20" pady="20">
+               <color r="255" g="255" b="255">
+                  <p/>    
+                 Verschiedene hochwertige Pflanzen und Bäume aus China, mit Modellvarianten.
+                  <p/>    
+                  <img src="entities/objects/foliage/Koa\Koa_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Koa Tree, <i>(Pinus tabuliformis)</i><br/>
+                  <img src="entities/objects/foliage/Rhododendron\Rhododendron_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Rhododendron, <i>(Rhododendron sutchuenense)</i><br/>
+                  <img src="entities/objects/foliage/HemlockChinese\HemlockChinese_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Chinesische Hemlocktanne, <i>(Tsuga chinensis)</i><br/>
+                  <img src="entities/objects/foliage/CoralberryChinese\CoralberryChinese_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Chinesische Schneebeere, <i>(Symphoricarpos sinensis)</i><br/>
+                  <img src="entities/objects/foliage/OrchidChinese\OrchidChinese_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Chinesische Orchidee, <i>(Cypripedium margaritaceum)</i><br/>
+                  <img src="entities/objects/foliage/Ginkgo\Ginkgo_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Ginkgo, <i>(Ginkgo biloba)</i><br/>
+                  <img src="entities/objects/foliage/BambooChinese\BambooChinese_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Bambus, <i>(Bambusa vulgaris)</i><br/>
+                  <img src="entities/objects/foliage/BambooLarge\BambooLarge_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Riesenbambus, <i>(Bambusa oldhamii)</i><br/>
+                  <img src="entities/objects/foliage/Chuniophoenix\Chuniophoenix_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Hainan-Fächerpalme, <i>(Chuniophoenix hainanensis)</i><br/>
+                  <img src="entities/objects/foliage/LizardTailChinese\LizardTailChinese_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Chinesischer Molchschwanz, <i>(Saururus chinensis)</i><br/>
+                  <img src="entities/objects/foliage/DwarfNaupaka\DwarfNaupaka_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Dwarf Naupaka, <i>(verschiedene)</i><br/>
+                  <img src="entities/objects/foliage/SilverSword\SilverSword_icon.dds" sx="0" sy="0" sw="64" sh="64"/>
+				  <br/>Hawaiian Silver Sword, <i>(Nelumbo nucifera)</i><br/>
+                  <p/>    
+               </color>
+            </cell>
+         </cell>
+         <cell width="260"/>
+         <cell width="620">
+		 Bestandteil von <a href="zoopedia:zoopedia_wildchina:entry"><u><color r="255" g="231" b="135">Wildes China</color></u></a>.
+         </cell>
+      </LOC_STRING>
+</ZT2Strings>

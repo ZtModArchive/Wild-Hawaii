@@ -1,0 +1,32 @@
+<BFTypedBinder binderType="Akohekohe_Adult_M">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Akohekohe>
+									<Akohekohe_Adult>
+										<Akohekohe_Adult_M />
+									</Akohekohe_Adult>
+								</Akohekohe>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity />
+	</instance>
+	<shared>
+		<UIToggleButton template="adopt">
+			<on>
+				<event data="BFString" msg="ZT_SETPLACEMENTOBJECT" string="Akohekohe_Adult_M" />
+			</on>
+		</UIToggleButton>
+		<BFAIEntityDataShared b_Male="1" f_adoptCount="rand(1,4)" />
+	</shared>
+</BFTypedBinder>

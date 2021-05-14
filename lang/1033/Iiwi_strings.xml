@@ -1,0 +1,135 @@
+﻿<ZT2Strings>
+	<entityname>
+		<!--animal names-->
+		<Iiwi>'I'iwi</Iiwi>
+		<Iiwi_stt>'I'iwi</Iiwi_stt>
+		<Iiwi_lower>the 'I'iwi</Iiwi_lower>
+		<Iiwi_ltt>
+			<color r="255" g="248" b="178">
+				<b>'I'iwi</b>
+			</color>
+			<br/>
+			Click to select and then place an 'I'iwi, a colorful honeycreeper found on several Hawaiian Islands.
+		</Iiwi_ltt>
+		<!--egg names-->
+		<IiwiNest>'I'iwi-Nest</IiwiNest>
+		<IiwiNest_stt>'I'iwi-Nest</IiwiNest_stt>
+		<IiwiNest_lower>the 'I'iwi-Nest</IiwiNest_lower>
+		<IiwiNest_ltt>
+			<color r="255" g="248" b="178">
+				<b>'I'iwi-Nest</b>
+			</color>
+			<br/>
+			Click to select and then place a egg of 'I'iwi.
+		</IiwiNest_ltt>
+	</entityname>
+	
+	<!--zoopedia entries-->
+	<zoopedia_iiwi>
+		<entry>'I'iwi</entry>
+		<text>
+			<cell pady="0" width="1000"/>
+			<p/>
+			<cell width="260"/>
+			<cell width="640" height="320" bgimg="ui/zoopedia/topCellBg.dds">
+				<cell width="600" padx="20" pady="20">
+					<cell width="284">
+						<cell width="96" bgimg="ui/zoopedia/littleBox-128.tga">
+							<img src="entities/units/animals/Iiwi/Iiwi_Adult_F_icon.dds" sx="0" sy="0" sw="64" sh="64" height="96" width="96"/>						
+						</cell>
+						<cell width="16">
+							<img src="ui/zoopedia/icon_male.dds" sx="0" sy="0" sw="64" sh="64" width="16" height="16"/>
+						</cell>
+						<cell width="16">
+							<img src="ui/zoopedia/icon_female.dds" sx="0" sy="0" sw="64" sh="64" width="16" height="16"/>
+						</cell>
+						<cell width="156"/>
+						<br/>	
+						<cell width="32" pady="0">					
+							<img src="ui/zoopedia/Vulnerable.dds" sx="0" sy="0" sw="64" sh="64" width="32" height="32"/>
+						</cell>
+						<cell width="224" padx="10" pady="0">
+							<color r="255" g="255" b="255">
+							Conservation status:
+							<br/>
+								<color r="0" g="255" b="0">
+									Vulnerable
+								</color>
+							</color>						
+						</cell>
+					</cell>				
+				
+					<cell width="128">
+						<color r="255" g="255" b="255">Tropical Coasts<br/></color>
+						<img src="ui/icon_biomes/icon_reef.dds" sx="0" sy="0" sw="128" sh="128" width="96" height="96"/>
+					</cell>
+					<cell width="128">
+						<color r="255" g="255" b="255">Hawaii<br/></color>
+						<img src="ui/icon_maplocations/coastal_hawaii.dds" sx="0" sy="0" sw="256" sh="256" width="96" height="96"/>
+					</cell>
+					<br/>
+					<cell width="284" pady="10">
+						<color r="255" g="255" b="255">
+							Class: Birds <i>(Aves)</i><br/>
+							Order: Passerines <i>(Passeriformes)</i><br/>
+							Family: Finches <i>(Fringillidae)</i><br/>
+							Genus:  <i>Drepanis</i><br/>
+							Species:  <i>coccinea</i><br/>
+
+						</color>
+					</cell>
+					<cell width="256" pady="10">
+						<img src="UI/zoopedia/biome/reef_zoopedia_biomebrush.dds" sx="0" sy="0" sw="256" sh="85"/>
+					</cell>
+				</cell>
+			</cell>
+			<p/>
+			<p/>
+			<cell width="260"/>
+			<cell width="300">
+				<cell width="64">
+					<img src="ui/zoopedia/fact-icon64.tga" sx="0" sy="0" sw="64" sh="64"/>
+				</cell>
+				<cell width="176">
+					<color r="255" g="255" b="255">
+						<font name="arial" size="12" shadowx="2" shadowy="1" shadowa="50">Fun 'I'iwi Facts</font>
+					</color>
+				</cell>
+				<p/>
+				<cell width="280" bgimg="ui/zoopedia/factBG.tga" padx="10">
+					<p/>
+					<cell width="32" pady="10">
+						<img src="ui/zoopedia/fact-bullet.tga" sx="0" sy="0" sw="32" sh="32"/>
+					</cell>
+					<cell width="202" pady="10">
+						<color r="255" g="255" b="255">The bird is often mentioned in Hawaiian folklore. The Hawaiian song "Sweet Lei Mamo" includes the line "The i'iwi bird, too, is a friend".</color>
+					</cell>
+					<br/>
+					<cell width="32" pady="10">
+						<img src="ui/zoopedia/fact-bullet.tga" sx="0" sy="0" sw="32" sh="32"/>
+					</cell>
+					<cell width="202" pady="10">
+						<color r="255" g="255" b="255">The ʻiʻiwi is a highly recognizable symbol of Hawaiʻi.</color>
+					</cell>
+					<br/>
+					<cell width="32" pady="10">
+						<img src="ui/zoopedia/fact-bullet.tga" sx="0" sy="0" sw="32" sh="32"/>
+					</cell>
+					<cell width="202" pady="10">
+						<color r="255" g="255" b="255">ʻIʻiwi was formerly classified as a near threatened species by the IUCN, but recent research has proven that it was rarer than previously believed. Consequently, it was uplisted to vulnerable status in 2008.</color>
+					</cell>
+					<br/>
+				</cell>
+			</cell>
+			<cell width="340">
+			<color r="255" g="248" b="178">To unlock the 'I'iwi in challenge or campaign games, you must earn a 1/2 zoo fame rating for your zoo.</color>
+			<p/>The ʻiʻiwi (Drepanis coccinea, pronounced /iːˈiːviː/, ee-EE-vee), or scarlet honeycreeper is a "hummingbird-niched" species of Hawaiian honeycreeper. It is one of the most plentiful species of this family, many of which are endangered or extinct. The ʻiʻiwi is the third most common native land bird in the Hawaiian Islands. Large colonies of ʻiʻiwi inhabit the islands of Hawaiʻi, Maui, and Kauaʻi, with smaller colonies on Molokaʻi and Oʻahu but are no longer present on Lānaʻi. Altogether, the remaining populations total 350,000 individuals, but are decreasing.
+
+			</cell>
+			<p/>The adult ʻiʻiwi is mostly scarlet, with black wings and tail and a long, curved, salmon-colored bill used primarily for drinking nectar. The contrast of the red and black plumage with surrounding green foliage makes the ʻiʻiwi one of Hawaiʻi's most easily seen birds. Younger birds have golden plumage with more spots and ivory bills and were mistaken for a different species by early naturalists. Observations of young birds moulting into adult plumage resolved this confusion.
+			<cell width="260"/>
+			<cell width="620"><color r="255" g="231" b="135">Made by Whalebite</color>
+			</cell>			
+		</text>
+	</zoopedia_iiwi>
+</ZT2Strings>

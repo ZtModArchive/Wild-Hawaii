@@ -1,0 +1,32 @@
+<BFTypedBinder binderType="ChickenKauai_Young_F">
+   <types>
+      <entity>
+         <actor>
+            <animal>
+               <Aves>
+                  <Galliformes>
+                     <Phasianidae>
+                        <ChickenKauai>
+                           <ChickenKauai_Young>
+                              <ChickenKauai_Young_F/>
+                           </ChickenKauai_Young>
+                        </ChickenKauai>
+                     </Phasianidae>
+                  </Galliformes>
+               </Aves>
+            </animal>
+         </actor>
+      </entity>
+   </types>
+   <instance>
+      <BFGEntity/>
+   </instance>
+   <shared>
+      <UIToggleButton template="adopt">
+         <on>
+            <event msg="ZT_SETPLACEMENTOBJECT" data="BFString" string="ChickenKauai_Young_F"/>
+         </on>
+      </UIToggleButton>
+      <BFAIEntityDataShared b_Male="0"/>
+   </shared>
+</BFTypedBinder>

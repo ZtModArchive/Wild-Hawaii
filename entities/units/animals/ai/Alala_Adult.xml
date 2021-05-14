@@ -1,0 +1,65 @@
+<BFTypedBinder abstract="true" binderType="Alala_Adult">
+	<types>
+		<entity>
+			<actor>
+				<animal>
+					<Aves>
+						<Galliformes>
+							<Phasianidae>
+								<Alala>
+									<Alala_Adult />
+								</Alala>
+							</Phasianidae>
+						</Galliformes>
+					</Aves>
+				</animal>
+			</actor>
+		</entity>
+	</types>
+	<instance>
+		<BFGEntity entityVersion="1">
+			<physObjParenting>
+				<parentObj attachnode="link" child="shadowObj" parent="mainObj" postype="ignore" rottype="use" />
+			</physObjParenting>
+		</BFGEntity>
+	</instance>
+	<shared>
+		<BFAIEntityDataShared b_Adult="1" b_Territorial="true" f_MorphMessageDuration="30" f_MorphMessagePriority="1" s_MorphMessage="zoomessages:AnimalGrowAdult" />
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					<BFActorComponent actorfile="entities/units/animals/Alala/Alala_Adult_F.bfm" />
+				</BFPhysObj>
+			</instance>
+			<shared>
+				<BFSharedRandomTextureInfo>
+					<replacementSet>
+						<group weight="1">
+							<item image="entities/units/animals/Alala/Alala_Adult_F.dds" material="Alala_Adult_F" />
+						</group>
+						<group weight="1">
+							<item image="entities/units/animals/Alala/Alala_Adult_F.dds" material="Alala_Adult_F" />
+						</group>
+						<group weight="1">
+							<item image="entities/units/animals/Alala/Alala_Adult_F.dds" material="Alala_Adult_F" />
+						</group>
+					</replacementSet>
+				</BFSharedRandomTextureInfo>
+			</shared>
+		</BFNamedBinder>
+		<BFNamedBinder binderName="shadowObj">
+			<instance>
+				<BFPhysObj>
+					<BFMovingBlobShadowComponent baseNode="Bip01 Spine" intensity="0.3" shadowTexture="world\shadows\blob\round_blob3.tga" width="1.0" />
+				</BFPhysObj>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder required="1">
+			<instance>
+				<BFGCollisionTester escapeBuffer="0.125" maxSlope=".9" motionClass="mover" radius=".25" wadeDepth="1" waterScore="10" />
+			</instance>
+		</BFBinder>
+	</binder>
+</BFTypedBinder>
